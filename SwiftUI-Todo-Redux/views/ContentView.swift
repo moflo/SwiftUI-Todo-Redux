@@ -2,8 +2,8 @@
 //  ContentView.swift
 //  SwiftUI-Todo-Redux
 //
-//  Created by admin on 6/22/19.
-//  Copyright © 2019 admin. All rights reserved.
+//  Created by moflo on 6/22/19.
+//  Copyright © 2019 Mobile Flow LLC. All rights reserved.
 //
 
 import SwiftUI
