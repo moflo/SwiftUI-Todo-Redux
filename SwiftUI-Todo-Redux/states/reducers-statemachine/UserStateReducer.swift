@@ -11,30 +11,36 @@ import Foundation
 struct UserStateReducer: Reducer {    
     func reduce(state: UsersState, action: Action) -> UsersState {
         var state = state
-        switch action {
 
-        case UserActions.addUser:
-            state.users.append(User(id: state.users.count,
-                                    name: "New user \(state.users.count + 1)",
-                                    username: "@newuser\(state.users.count + 1)"))
+        if let action = action as? UserActions.UserAddResponse {
+            let id = action.id
+            let user = action.user
+            state.users.append(user)        
+        }
 
-        case let UserActions.deleteUser(index):
+        if let action = action as? UserActions.UserDeleteResponse {
+            let id = action.id
             state.users.remove(at: index)
+        }
 
-        case let UserActions.move(from, to):
+        if let action = action as? UserActions.UserMoveResponse {
+            let from = action.from
+            let at = action.at
             let user = state.users.remove(at: from)
             state.users.insert(user, at: to)
+        }
 
-        case let UserActions.editUser(id, name, username):
-            var user = state.users[id]
-            user.name = name
-            user.username = username
+        if let action = action as? UserActions.EditUserResponse {
+            let id = action.id
+            let user = action.user
             state.users[id] = user
+        }
 
-        case UserActions.testEditFirstUser:
+        if let action = action as? UserActions.TestEditResponse {
             if !state.users.isEmpty {
                 state.users[0] = User(id: 0, name: "user1", username: "u\ns\ne\nr\nn\na\nm\ne")
             }
+        }
 
         case UserActions.startEditUser:
             state.isEditingUser = true
@@ -42,9 +48,6 @@ struct UserStateReducer: Reducer {
         case UserActions.stopEditUser:
             state.isEditingUser = false
             
-        default:
-            break
-        }
         return state
     }
 }

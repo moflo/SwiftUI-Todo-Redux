@@ -10,6 +10,8 @@ import Foundation
 
 struct TaskStateReducer: Reducer {    
     func reduce(state: TasksState, action: Action) -> TasksState {
+        guard let action = action else { return state }
+        
         var state = state
         switch action {
 
