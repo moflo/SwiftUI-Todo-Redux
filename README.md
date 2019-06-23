@@ -47,3 +47,6 @@ Finally, all UI Views are maintained within their respective hierarchy, with a H
 ```
 
 
+## Notes
+
+- Mock API testing using [https://www.mocky.io](https://www.mocky.io)
