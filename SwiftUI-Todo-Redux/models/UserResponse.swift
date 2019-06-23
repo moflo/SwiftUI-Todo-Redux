@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserResponse: Codable {
+struct UserResponseJSON: Codable {
     let id: Int
     let user: User
 }

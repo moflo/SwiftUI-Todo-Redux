@@ -9,11 +9,10 @@
 import Foundation
 
 struct UserActions {
-    struct addTask: Action {
+    struct getUsers: Action {
         init() {
-            let user = User(id: "0", name: "Temp Name")
-            APIService.shared.GET(endpoint: .add(user: user), params: nil) {
-                (result: Result<UserResponse, APIService.APIError>) in
+            APIService.shared.GET(endpoint: .users, params: nil) {
+                (result: Result<UserResponseJSON, APIService.APIError>) in
                 switch result {
                 case let .success(response):
                     store.dispatch(action: UserAddResponse(id: response.id, response: response))
@@ -52,6 +51,6 @@ struct UserActions {
 
     struct UserAddResponse: Action {
         let id: String
-        let response: UserResponse
+        let response: UserResponseJSON
     }
 }
