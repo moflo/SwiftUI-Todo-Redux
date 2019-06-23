@@ -30,6 +30,7 @@ final class AppState: BindableObject {
     }
 }
 
+// Global Store
 let store = AppState()
 
 #if DEBUG

@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				843B2B6F22BF1EB7001E89B6 /* AppState.swift */,
-				843B2B7022BF1EB7001E89B6 /* reducers-statemachine */,
 				843B2B7422BF1EB7001E89B6 /* actions */,
+				843B2B7022BF1EB7001E89B6 /* reducers-statemachine */,
 				843B2B7822BF1EB7001E89B6 /* flux-substate */,
 			);
 			name = states;
