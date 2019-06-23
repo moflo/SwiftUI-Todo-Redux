@@ -14,7 +14,7 @@ struct Task: Equatable, Hashable, Codable, Identifiable {
     var isDone: Bool
     var owner: User?
 
-    init(title: String, isDone: Bool, owner :User? = nil) {
+    init(title: String, isDone: Bool, owner: User? = nil) {
         id = UUID()
         self.title = title
         self.isDone = isDone
