@@ -9,15 +9,26 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var store: AppStore
+    @State var selectedTab = Tab.tasks
+
+    enum Tab: Int {
+        case tasks, users
+    }
+
     var body: some View {
-        Text("SwiftUI Todo App With Redux State")
+        TabbedView(selection: $selectedTab) {
+            TasksList().tabItemLabel(Text("Tasks")).tag(Tab.tasks)
+            UsersList().tabItemLabel(Text("Team")).tag(Tab.users)
+        }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
 #if DEBUG
-    struct ContentView_Previews: PreviewProvider {
+    struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
-            HomeView()
+            HomeView().environmentObject(sampleStore)
         }
     }
 #endif
