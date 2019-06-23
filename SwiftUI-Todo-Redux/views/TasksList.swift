@@ -11,6 +11,11 @@ import SwiftUI
 struct TasksList: View {
     @EnvironmentObject var store: AppState
 
+    func loadPage() {
+        print("loadPage")
+        store.dispatch(action: TaskActions.getTasks())
+    }
+    
     var taskSection: some View {
         Section {
             ForEach(store.tasksState.tasks) { task in
@@ -27,6 +32,10 @@ struct TasksList: View {
                 taskSection
             }
             .navigationBarTitle(Text("My Tasks"))
+            .onAppear {
+                self.loadPage()
+            }
+
         }
     }
 }

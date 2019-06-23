@@ -11,7 +11,7 @@ import Foundation
 struct DataStore {
     static let shared = DataStore()
 
-    let baseURL = URL(string: "http://www.mocky.io/v2/")!
+    let baseURL = URL(string: "https://www.mocky.io/v2/")!
     let apiKey = "5d0ef6093200005700dc694d"
     let decoder = JSONDecoder()
 
@@ -34,7 +34,7 @@ struct DataStore {
             case let .user(id):
                 return "5d0f9ee93200006b00dc6a71/\(id)"
             case .tasks:
-                return "5d0fa0083200006100dc6a79"
+                return "5d0ffc7230000096034c9e04"
             case let .task(id):
                 return "5d0fa0773200005c00dc6a80/\(id)"
             }
@@ -56,6 +56,7 @@ struct DataStore {
         }
         var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"
+        print(request)
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data else {
                 completionHandler(.failure(.noResponse))

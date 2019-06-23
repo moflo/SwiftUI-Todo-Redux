@@ -14,6 +14,12 @@
 		8416559922BFF7C6007DF30E /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416559322BFF7C5007DF30E /* UserDetail.swift */; };
 		8416559A22BFF7C6007DF30E /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416559422BFF7C6007DF30E /* UsersList.swift */; };
 		8416559B22BFF7C6007DF30E /* TasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416559522BFF7C6007DF30E /* TasksList.swift */; };
+		841655A322C029E6007DF30E /* SwiftUI_Todo_ReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841655A222C029E6007DF30E /* SwiftUI_Todo_ReduxTests.swift */; };
+		841655AA22C02AAE007DF30E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B8722BF494B001E89B6 /* DataStore.swift */; };
+		841655AB22C02AAE007DF30E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6822BF1E35001E89B6 /* User.swift */; };
+		841655AC22C02AAE007DF30E /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6922BF1E35001E89B6 /* UserResponse.swift */; };
+		841655AD22C02AAE007DF30E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6A22BF1E35001E89B6 /* Task.swift */; };
+		841655AE22C02AAE007DF30E /* TaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B8822BF494B001E89B6 /* TaskResponse.swift */; };
 		843B2B4B22BE9B1D001E89B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */; };
 		843B2B4D22BE9B1D001E89B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */; };
 		843B2B5122BE9B1F001E89B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843B2B5022BE9B1F001E89B6 /* Assets.xcassets */; };
@@ -36,6 +42,16 @@
 		843B2B8A22BF494B001E89B6 /* TaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B8822BF494B001E89B6 /* TaskResponse.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		841655A522C029E6007DF30E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 843B2B3F22BE9B1D001E89B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 843B2B4622BE9B1D001E89B6;
+			remoteInfo = "SwiftUI-Todo-Redux";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		8416558E22BFF4EE007DF30E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8416559022BFF7C5007DF30E /* TaskDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetail.swift; sourceTree = "<group>"; };
@@ -44,6 +60,9 @@
 		8416559322BFF7C5007DF30E /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		8416559422BFF7C6007DF30E /* UsersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
 		8416559522BFF7C6007DF30E /* TasksList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksList.swift; sourceTree = "<group>"; };
+		841655A022C029E6007DF30E /* SwiftUI-Todo-ReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-Todo-ReduxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		841655A222C029E6007DF30E /* SwiftUI_Todo_ReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Todo_ReduxTests.swift; sourceTree = "<group>"; };
+		841655A422C029E6007DF30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843B2B4722BE9B1D001E89B6 /* SwiftUI-Todo-Redux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Todo-Redux.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8416559D22C029E6007DF30E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		843B2B4422BE9B1D001E89B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,11 +106,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841655A122C029E6007DF30E /* SwiftUI-Todo-ReduxTests */ = {
+			isa = PBXGroup;
+			children = (
+				841655A222C029E6007DF30E /* SwiftUI_Todo_ReduxTests.swift */,
+				841655A422C029E6007DF30E /* Info.plist */,
+			);
+			path = "SwiftUI-Todo-ReduxTests";
+			sourceTree = "<group>";
+		};
 		843B2B3E22BE9B1D001E89B6 = {
 			isa = PBXGroup;
 			children = (
 				843B2B8622BF2983001E89B6 /* README.md */,
 				843B2B4922BE9B1D001E89B6 /* SwiftUI-Todo-Redux */,
+				841655A122C029E6007DF30E /* SwiftUI-Todo-ReduxTests */,
 				843B2B4822BE9B1D001E89B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				843B2B4722BE9B1D001E89B6 /* SwiftUI-Todo-Redux.app */,
+				841655A022C029E6007DF30E /* SwiftUI-Todo-ReduxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +229,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8416559F22C029E6007DF30E /* SwiftUI-Todo-ReduxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841655A722C029E6007DF30E /* Build configuration list for PBXNativeTarget "SwiftUI-Todo-ReduxTests" */;
+			buildPhases = (
+				8416559C22C029E6007DF30E /* Sources */,
+				8416559D22C029E6007DF30E /* Frameworks */,
+				8416559E22C029E6007DF30E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				841655A622C029E6007DF30E /* PBXTargetDependency */,
+			);
+			name = "SwiftUI-Todo-ReduxTests";
+			productName = "SwiftUI-Todo-ReduxTests";
+			productReference = 841655A022C029E6007DF30E /* SwiftUI-Todo-ReduxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		843B2B4622BE9B1D001E89B6 /* SwiftUI-Todo-Redux */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 843B2B5B22BE9B1F001E89B6 /* Build configuration list for PBXNativeTarget "SwiftUI-Todo-Redux" */;
@@ -219,6 +274,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = admin;
 				TargetAttributes = {
+					8416559F22C029E6007DF30E = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 843B2B4622BE9B1D001E89B6;
+					};
 					843B2B4622BE9B1D001E89B6 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -238,11 +297,19 @@
 			projectRoot = "";
 			targets = (
 				843B2B4622BE9B1D001E89B6 /* SwiftUI-Todo-Redux */,
+				8416559F22C029E6007DF30E /* SwiftUI-Todo-ReduxTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8416559E22C029E6007DF30E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		843B2B4522BE9B1D001E89B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +323,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8416559C22C029E6007DF30E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841655A322C029E6007DF30E /* SwiftUI_Todo_ReduxTests.swift in Sources */,
+				841655AA22C02AAE007DF30E /* DataStore.swift in Sources */,
+				841655AD22C02AAE007DF30E /* Task.swift in Sources */,
+				841655AE22C02AAE007DF30E /* TaskResponse.swift in Sources */,
+				841655AB22C02AAE007DF30E /* User.swift in Sources */,
+				841655AC22C02AAE007DF30E /* UserResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		843B2B4322BE9B1D001E89B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,6 +369,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		841655A622C029E6007DF30E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 843B2B4622BE9B1D001E89B6 /* SwiftUI-Todo-Redux */;
+			targetProxy = 841655A522C029E6007DF30E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		843B2B5522BE9B1F001E89B6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -301,6 +389,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		841655A822C029E6007DF30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "SwiftUI-Todo-ReduxTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.demo.SwiftUI-Todo-ReduxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-Todo-Redux.app/SwiftUI-Todo-Redux";
+			};
+			name = Debug;
+		};
+		841655A922C029E6007DF30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "SwiftUI-Todo-ReduxTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.demo.SwiftUI-Todo-ReduxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-Todo-Redux.app/SwiftUI-Todo-Redux";
+			};
+			name = Release;
+		};
 		843B2B5922BE9B1F001E89B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -456,6 +582,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		841655A722C029E6007DF30E /* Build configuration list for PBXNativeTarget "SwiftUI-Todo-ReduxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841655A822C029E6007DF30E /* Debug */,
+				841655A922C029E6007DF30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		843B2B4222BE9B1D001E89B6 /* Build configuration list for PBXProject "SwiftUI-Todo-Redux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
