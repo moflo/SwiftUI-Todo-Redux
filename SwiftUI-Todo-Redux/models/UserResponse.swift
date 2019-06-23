@@ -12,4 +12,3 @@ struct UserResponse: Codable {
     let id: Int
     let user: User
 }
-

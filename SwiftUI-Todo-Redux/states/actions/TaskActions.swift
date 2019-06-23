@@ -8,63 +8,47 @@
 
 import Foundation
 
-struct TaskActions{
-
-    struct addTask : Action {
+struct TaskActions {
+    struct addTask: Action {
         init() {
             APIService.shared.GET(endpoint: .credits(movie: movie), params: nil) {
                 (result: Result<CastResponse, APIService.APIError>) in
                 switch result {
                 case let .success(response):
                     store.dispatch(action: SetMovieCasts(movie: movie, response: response))
-                case .failure(_):
+                case .failure:
                     break
                 }
             }
-
         }
     }
 
-    struct deletTask : Action {
-        init(index: Int) {
-
-        }
-    }
-    
-    struct move : Action {
-        init(from: Int, to: Int) {
-
-        }
+    struct deletTask: Action {
+        init(index _: Int) {}
     }
 
-    struct editTask : Action {
-        init(id: Int, name: String, description: String, owner: User) {
-
-        }
+    struct move: Action {
+        init(from _: Int, to _: Int) {}
     }
 
-    struct markTaskDone : Action {
-        init(id: Int) {
-
-        }
+    struct editTask: Action {
+        init(id _: Int, name _: String, description _: String, owner _: User) {}
     }
 
-    struct testEditBlankTask : Action {
-        init() {
-
-        }
+    struct markTaskDone: Action {
+        init(id _: Int) {}
     }
 
-    struct startEditTask : Action {
-        init() {
-
-        }
+    struct testEditBlankTask: Action {
+        init() {}
     }
 
-    struct stopEditTask : Action {
-        init() {
+    struct startEditTask: Action {
+        init() {}
+    }
 
-        }
+    struct stopEditTask: Action {
+        init() {}
     }
 
     // MARK: Response Structs
@@ -73,6 +57,4 @@ struct TaskActions{
         let movie: Int
         let response: CastResponse
     }
-
 }
-

@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct UserStateReducer: Reducer {    
+struct UserStateReducer: Reducer {
     func reduce(state: UsersState, action: Action) -> UsersState {
         var state = state
 
         if let action = action as? UserActions.UserAddResponse {
             let id = action.id
             let user = action.user
-            state.users.append(user)        
+            state.users.append(user)
         }
 
         if let action = action as? UserActions.UserDeleteResponse {
@@ -42,12 +42,12 @@ struct UserStateReducer: Reducer {
             }
         }
 
-        case UserActions.startEditUser:
-            state.isEditingUser = true
+    case UserActions.startEditUser:
+        state.isEditingUser = true
 
-        case UserActions.stopEditUser:
-            state.isEditingUser = false
-            
+    case UserActions.stopEditUser:
+        state.isEditingUser = false
+
         return state
     }
 }

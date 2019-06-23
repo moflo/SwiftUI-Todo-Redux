@@ -8,60 +8,45 @@
 
 import Foundation
 
-
 struct UserActions {
-
-    struct addTask : Action {
+    struct addTask: Action {
         init() {
-            let user = User(id:"0", name:"Temp Name")
+            let user = User(id: "0", name: "Temp Name")
             APIService.shared.GET(endpoint: .add(user: user), params: nil) {
                 (result: Result<UserResponse, APIService.APIError>) in
                 switch result {
                 case let .success(response):
                     store.dispatch(action: UserAddResponse(id: response.id, response: response))
-                case .failure(_):
+                case .failure:
                     break
                 }
             }
-
         }
     }
 
-    struct deleteUser : Action {
-        init(index: Int) {
-
-        }
+    struct deleteUser: Action {
+        init(index _: Int) {}
     }
 
-    struct move : Action {
-        init(from: Int, to: Int) {
-
-        }
+    struct move: Action {
+        init(from _: Int, to _: Int) {}
     }
 
-    struct editUser : Action {
-        init(id: Int, name: String, username: String) {
-
-        }
+    struct editUser: Action {
+        init(id _: Int, name _: String, username _: String) {}
     }
 
-    struct testEditFirstUser : Action {
-        init() {
-
-        }
-    }
-    struct startEditUser : Action {
-        init() {
-
-        }
-    }
-    struct stopEditUser : Action {
-        init() {
-
-        }
+    struct testEditFirstUser: Action {
+        init() {}
     }
 
+    struct startEditUser: Action {
+        init() {}
+    }
 
+    struct stopEditUser: Action {
+        init() {}
+    }
 
     // MARK: Response Structs
 
@@ -69,5 +54,4 @@ struct UserActions {
         let id: String
         let response: UserResponse
     }
-
 }

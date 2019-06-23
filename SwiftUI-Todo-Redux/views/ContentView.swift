@@ -8,16 +8,16 @@
 
 import SwiftUI
 
-struct ContentView : View {
+struct ContentView: View {
     var body: some View {
         Text("SwiftUI Todo App With Redux State")
     }
 }
 
 #if DEBUG
-struct ContentView_Previews : PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
 #endif

@@ -6,16 +6,14 @@
 //  Copyright © 2019 Mobile Flow LLC. All rights reserved.
 //
 
+import Combine
 import Foundation
 import SwiftUI
-import Combine
-
-
 
 struct UsersState: FluxState {
     var users: [User]
     var isEditingUser = false
-    
+
     init(users: [User] = []) {
         self.users = users
     }

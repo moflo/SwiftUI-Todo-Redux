@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct Task: Equatable, Hashable, Codable, Identifiable {
-  let id: UUID
-  var title: String
-  var isDone: Bool
+    let id: UUID
+    var title: String
+    var isDone: Bool
 
-  init(title: String, isDone: Bool) {
-    self.id = UUID()
-    self.title = title
-    self.isDone = isDone
-  }
+    init(title: String, isDone: Bool) {
+        id = UUID()
+        self.title = title
+        self.isDone = isDone
+    }
 }
 
 let testTasksModels = [Task(id: "1", title: "task 1", isDone: true),
-                  Task(id: "2", title: "task 2", isDone: false)]
+                       Task(id: "2", title: "task 2", isDone: false)]

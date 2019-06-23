@@ -6,18 +6,15 @@
 //  Copyright © 2019 Mobile Flow LLC. All rights reserved.
 //
 
+import Combine
 import Foundation
 import SwiftUI
-import Combine
 
-
-
-struct TasksState : FluxState {
+struct TasksState: FluxState {
     var tasks: [Task]
     var isEditingTask = false
 
     init(tasks: [Task] = []) {
         self.tasks = tasks
     }
-
 }

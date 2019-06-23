@@ -8,5 +8,4 @@
 
 import Foundation
 
-protocol FluxState { }
-
+protocol FluxState {}

@@ -16,5 +16,4 @@ struct User: Equatable, Hashable, Codable, Identifiable {
 }
 
 let testUsersModels = [User(id: 0, name: "user 1", username: "@user1"),
-                  User(id: 1, name: "user 2", username: "@user2")]
-
+                       User(id: 1, name: "user 2", username: "@user2")]

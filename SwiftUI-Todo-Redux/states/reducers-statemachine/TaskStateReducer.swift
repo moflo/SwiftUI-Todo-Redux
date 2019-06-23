@@ -8,13 +8,12 @@
 
 import Foundation
 
-struct TaskStateReducer: Reducer {    
+struct TaskStateReducer: Reducer {
     func reduce(state: TasksState, action: Action) -> TasksState {
         guard let action = action else { return state }
-        
+
         var state = state
         switch action {
-
         case TaskActions.addTask:
             state.tasks.append(Task(id: state.tasks.count,
                                     name: "New task \(state.tasks.count + 1)",
@@ -47,7 +46,7 @@ struct TaskStateReducer: Reducer {
 
         case TaskActions.stopEditTask:
             state.isEditingtask = false
-            
+
         default:
             break
         }
