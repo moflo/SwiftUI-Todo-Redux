@@ -32,7 +32,7 @@ Finally, all UI Views are maintained within their respective hierarchy, with a H
 | |____Task.swift
 |____states
 | |____AppState.swift
-| |____flux-substate
+| |____flux (substate)
 | | |____UsersState.swift
 | | |____FluxState.swift
 | | |____TasksState.swift
@@ -40,7 +40,7 @@ Finally, all UI Views are maintained within their respective hierarchy, with a H
 | | |____TaskActions.swift
 | | |____Action.swift
 | | |____UserActions.swift
-| |____reducers-statemachine
+| |____reducers (statemachine)
 | | |____Reducer.swift
 | | |____UserStateReducer.swift
 | | |____TaskStateReducer.swift
