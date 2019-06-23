@@ -10,9 +10,14 @@ import Foundation
 
 struct TaskStateReducer: Reducer {
     func reduce(state: TasksState, action: Action) -> TasksState {
-        guard let action = action else { return state }
-
         var state = state
+
+        if let action = action as? TaskAction.GetTaskResponse {
+            let id = action.id
+            let tasks = action.response.tasks
+            state.tasks.append(tasks)
+        }
+
         switch action {
         case TaskActions.addTask:
             state.tasks.append(Task(id: state.tasks.count,

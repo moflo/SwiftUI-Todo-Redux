@@ -9,13 +9,13 @@
 import Foundation
 
 struct TaskActions {
-    struct addTask: Action {
+    struct getTasks: Action {
         init() {
-            APIService.shared.GET(endpoint: .credits(movie: movie), params: nil) {
-                (result: Result<CastResponse, APIService.APIError>) in
+            DataStore.shared.GET(endpoint: .tasks, params: nil) {
+                (result: Result<TaskResponseJSON, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetMovieCasts(movie: movie, response: response))
+                    store.dispatch(action: GetTaskResponse(id: 0, response: response))
                 case .failure:
                     break
                 }
@@ -53,8 +53,8 @@ struct TaskActions {
 
     // MARK: Response Structs
 
-    struct SetMovieCasts: Action {
-        let movie: Int
-        let response: CastResponse
+    struct GetTaskResponse: Action {
+        let id: Int
+        let response: TaskResponseJSON
     }
 }

@@ -1,5 +1,5 @@
 //
-//  UserResponse.swift
+//  TaskResponse.swift
 //  SwiftUI-Todo-Redux
 //
 //  Created by moflo on 6/22/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserResponse: Codable {
+struct TaskResponseJSON: Codable {
     let id: Int
-    let user: User
+    let tasks: [Task]
 }
