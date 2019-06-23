@@ -19,8 +19,8 @@ struct HomeView: View {
 
     var body: some View {
         TabbedView(selection: $selectedTab) {
-            TasksList().tabItemLabel(Text("Tasks")).tag(Tab.tasks)
-            UsersList().tabItemLabel(Text("Team")).tag(Tab.users)
+            TasksList().tabItemLabel(VStack{Image("tab_task");Text("Tasks")}).tag(Tab.tasks)
+            UsersList().tabItemLabel(VStack{Image("tab_user");Text("Team")}).tag(Tab.users)
         }
         .edgesIgnoringSafeArea(.top)
     }
