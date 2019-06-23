@@ -20,5 +20,5 @@ struct Task: Equatable, Hashable, Codable, Identifiable {
     }
 }
 
-let testTasksModels = [Task(id: "1", title: "task 1", isDone: true),
-                       Task(id: "2", title: "task 2", isDone: false)]
+let testTasksModels = [Task(title: "task 1", isDone: true),
+                       Task(title: "task 2", isDone: false)]

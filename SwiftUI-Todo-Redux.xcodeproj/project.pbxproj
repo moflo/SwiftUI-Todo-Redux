@@ -9,21 +9,47 @@
 /* Begin PBXBuildFile section */
 		843B2B4B22BE9B1D001E89B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */; };
 		843B2B4D22BE9B1D001E89B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */; };
-		843B2B4F22BE9B1D001E89B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4E22BE9B1D001E89B6 /* ContentView.swift */; };
 		843B2B5122BE9B1F001E89B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843B2B5022BE9B1F001E89B6 /* Assets.xcassets */; };
 		843B2B5422BE9B1F001E89B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843B2B5322BE9B1F001E89B6 /* Preview Assets.xcassets */; };
 		843B2B5722BE9B1F001E89B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B2B5522BE9B1F001E89B6 /* LaunchScreen.storyboard */; };
+		843B2B6622BF1E1D001E89B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6522BF1E1D001E89B6 /* ContentView.swift */; };
+		843B2B6B22BF1E35001E89B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6822BF1E35001E89B6 /* User.swift */; };
+		843B2B6C22BF1E35001E89B6 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6922BF1E35001E89B6 /* UserResponse.swift */; };
+		843B2B6D22BF1E35001E89B6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6A22BF1E35001E89B6 /* Task.swift */; };
+		843B2B7C22BF1EB7001E89B6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6F22BF1EB7001E89B6 /* AppState.swift */; };
+		843B2B7D22BF1EB7001E89B6 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7122BF1EB7001E89B6 /* Reducer.swift */; };
+		843B2B7E22BF1EB7001E89B6 /* UserStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7222BF1EB7001E89B6 /* UserStateReducer.swift */; };
+		843B2B7F22BF1EB7001E89B6 /* TaskStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7322BF1EB7001E89B6 /* TaskStateReducer.swift */; };
+		843B2B8022BF1EB7001E89B6 /* TaskActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7522BF1EB7001E89B6 /* TaskActions.swift */; };
+		843B2B8122BF1EB7001E89B6 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7622BF1EB7001E89B6 /* Action.swift */; };
+		843B2B8222BF1EB7001E89B6 /* UserActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7722BF1EB7001E89B6 /* UserActions.swift */; };
+		843B2B8322BF1EB7001E89B6 /* UsersState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7922BF1EB7001E89B6 /* UsersState.swift */; };
+		843B2B8422BF1EB7001E89B6 /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7A22BF1EB7001E89B6 /* FluxState.swift */; };
+		843B2B8522BF1EB7001E89B6 /* TasksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7B22BF1EB7001E89B6 /* TasksState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		843B2B4722BE9B1D001E89B6 /* SwiftUI-Todo-Redux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Todo-Redux.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		843B2B4E22BE9B1D001E89B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		843B2B5022BE9B1F001E89B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843B2B5322BE9B1F001E89B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		843B2B5622BE9B1F001E89B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843B2B5822BE9B1F001E89B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843B2B6522BF1E1D001E89B6 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		843B2B6822BF1E35001E89B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		843B2B6922BF1E35001E89B6 /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		843B2B6A22BF1E35001E89B6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		843B2B6F22BF1EB7001E89B6 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		843B2B7122BF1EB7001E89B6 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		843B2B7222BF1EB7001E89B6 /* UserStateReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStateReducer.swift; sourceTree = "<group>"; };
+		843B2B7322BF1EB7001E89B6 /* TaskStateReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStateReducer.swift; sourceTree = "<group>"; };
+		843B2B7522BF1EB7001E89B6 /* TaskActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskActions.swift; sourceTree = "<group>"; };
+		843B2B7622BF1EB7001E89B6 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		843B2B7722BF1EB7001E89B6 /* UserActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActions.swift; sourceTree = "<group>"; };
+		843B2B7922BF1EB7001E89B6 /* UsersState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersState.swift; sourceTree = "<group>"; };
+		843B2B7A22BF1EB7001E89B6 /* FluxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxState.swift; sourceTree = "<group>"; };
+		843B2B7B22BF1EB7001E89B6 /* TasksState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +84,11 @@
 			children = (
 				843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */,
 				843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */,
-				843B2B4E22BE9B1D001E89B6 /* ContentView.swift */,
-				843B2B5022BE9B1F001E89B6 /* Assets.xcassets */,
+				843B2B6422BF1E1D001E89B6 /* views */,
+				843B2B6722BF1E35001E89B6 /* models */,
+				843B2B6E22BF1EB7001E89B6 /* states */,
 				843B2B5522BE9B1F001E89B6 /* LaunchScreen.storyboard */,
+				843B2B5022BE9B1F001E89B6 /* Assets.xcassets */,
 				843B2B5822BE9B1F001E89B6 /* Info.plist */,
 				843B2B5222BE9B1F001E89B6 /* Preview Content */,
 			);
@@ -73,6 +101,66 @@
 				843B2B5322BE9B1F001E89B6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		843B2B6422BF1E1D001E89B6 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				843B2B6522BF1E1D001E89B6 /* ContentView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		843B2B6722BF1E35001E89B6 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				843B2B6822BF1E35001E89B6 /* User.swift */,
+				843B2B6922BF1E35001E89B6 /* UserResponse.swift */,
+				843B2B6A22BF1E35001E89B6 /* Task.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		843B2B6E22BF1EB7001E89B6 /* states */ = {
+			isa = PBXGroup;
+			children = (
+				843B2B6F22BF1EB7001E89B6 /* AppState.swift */,
+				843B2B7022BF1EB7001E89B6 /* reducers-statemachine */,
+				843B2B7422BF1EB7001E89B6 /* actions */,
+				843B2B7822BF1EB7001E89B6 /* flux-substate */,
+			);
+			name = states;
+			path = "SwiftUI-Todo-Redux/states";
+			sourceTree = SOURCE_ROOT;
+		};
+		843B2B7022BF1EB7001E89B6 /* reducers-statemachine */ = {
+			isa = PBXGroup;
+			children = (
+				843B2B7122BF1EB7001E89B6 /* Reducer.swift */,
+				843B2B7222BF1EB7001E89B6 /* UserStateReducer.swift */,
+				843B2B7322BF1EB7001E89B6 /* TaskStateReducer.swift */,
+			);
+			path = "reducers-statemachine";
+			sourceTree = "<group>";
+		};
+		843B2B7422BF1EB7001E89B6 /* actions */ = {
+			isa = PBXGroup;
+			children = (
+				843B2B7622BF1EB7001E89B6 /* Action.swift */,
+				843B2B7722BF1EB7001E89B6 /* UserActions.swift */,
+				843B2B7522BF1EB7001E89B6 /* TaskActions.swift */,
+			);
+			path = actions;
+			sourceTree = "<group>";
+		};
+		843B2B7822BF1EB7001E89B6 /* flux-substate */ = {
+			isa = PBXGroup;
+			children = (
+				843B2B7A22BF1EB7001E89B6 /* FluxState.swift */,
+				843B2B7922BF1EB7001E89B6 /* UsersState.swift */,
+				843B2B7B22BF1EB7001E89B6 /* TasksState.swift */,
+			);
+			path = "flux-substate";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +234,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843B2B8322BF1EB7001E89B6 /* UsersState.swift in Sources */,
+				843B2B6C22BF1E35001E89B6 /* UserResponse.swift in Sources */,
+				843B2B8522BF1EB7001E89B6 /* TasksState.swift in Sources */,
+				843B2B8122BF1EB7001E89B6 /* Action.swift in Sources */,
+				843B2B8022BF1EB7001E89B6 /* TaskActions.swift in Sources */,
+				843B2B8422BF1EB7001E89B6 /* FluxState.swift in Sources */,
+				843B2B7F22BF1EB7001E89B6 /* TaskStateReducer.swift in Sources */,
+				843B2B7E22BF1EB7001E89B6 /* UserStateReducer.swift in Sources */,
+				843B2B8222BF1EB7001E89B6 /* UserActions.swift in Sources */,
+				843B2B6B22BF1E35001E89B6 /* User.swift in Sources */,
+				843B2B7D22BF1EB7001E89B6 /* Reducer.swift in Sources */,
+				843B2B7C22BF1EB7001E89B6 /* AppState.swift in Sources */,
 				843B2B4B22BE9B1D001E89B6 /* AppDelegate.swift in Sources */,
 				843B2B4D22BE9B1D001E89B6 /* SceneDelegate.swift in Sources */,
-				843B2B4F22BE9B1D001E89B6 /* ContentView.swift in Sources */,
+				843B2B6D22BF1E35001E89B6 /* Task.swift in Sources */,
+				843B2B6622BF1E1D001E89B6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

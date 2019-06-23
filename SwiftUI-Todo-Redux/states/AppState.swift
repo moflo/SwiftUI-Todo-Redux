@@ -16,20 +16,14 @@ final class AppState: BindableObject {
     var usersState: UsersState
     var tasksState: TasksState
 
-    init(usersState: UsersState = UsersState(), tasksState _: TasksState = TasksState()) {
+    init(usersState: UsersState = UsersState(), tasksState: TasksState = TasksState()) {
         self.usersState = usersState
+        self.tasksState = tasksState
     }
 
     func dispatch(action: Action) {
-        usersState = UserStateReducer().reduce(state: usersState, action: action)
-        didChange.send(self)
-    }
-
-    func dispatch(action: Action) {
-        var state = self.state
-        state.usersState = UserStateReducer().reduce(state: state.usersState, action: action)
-        state.tasksState = TaskStateReducer().reduce(state: state.tasksState, action: action)
-        self.state = state
+        self.usersState = UserStateReducer().reduce(state: self.usersState, action: action)
+        self.tasksState = TaskStateReducer().reduce(state: self.tasksState, action: action)
         DispatchQueue.main.async {
             self.didChange.send(self)
         }
@@ -39,5 +33,7 @@ final class AppState: BindableObject {
 let store = AppState()
 
 #if DEBUG
-    let sampleStore = AppState(usersState: UsersState(users: testUsersModels), tasksStates: usersState: TasksState(tasks: testTasksModels))
+    let sampleStore = AppState(
+            usersState: UsersState(users: testUsersModels),
+            tasksState: TasksState(tasks: testTasksModels))
 #endif
