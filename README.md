@@ -1,6 +1,8 @@
 # SwiftUI-Todo-Redux
 SwiftUI Todo Redux app example using a React/Redux monolithic state store with flux like dispatch/reduce actions
 
+<img src="screenshot.png" width="900" />
+
 ## Background
 
 SwiftUI based app using a centralized, 'monolithic' AppState() which binds to the UI using the `Combine` framework and a `PassthroughSubject` method. This architecture is based on the React/Redux pattern and has a few key benefits:
