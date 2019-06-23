@@ -33,13 +33,13 @@ Finally, all UI Views are maintained within their respective hierarchy, with a H
 |____states
 | |____AppState.swift
 | |____flux (substate)
-| | |____UsersState.swift
 | | |____FluxState.swift
+| | |____UsersState.swift
 | | |____TasksState.swift
 | |____actions
-| | |____TaskActions.swift
 | | |____Action.swift
 | | |____UserActions.swift
+| | |____TaskActions.swift
 | |____reducers (statemachine)
 | | |____Reducer.swift
 | | |____UserStateReducer.swift
