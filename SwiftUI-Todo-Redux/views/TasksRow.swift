@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TasksRow: View {
-    @EnvironmentObject var store: AppStore
+    @EnvironmentObject var store: AppState
     let task: Task
 
     var body: some View {
@@ -29,7 +29,7 @@ struct TasksRow: View {
 }
 
 #if DEBUG
-    struct TasksList_Previews: PreviewProvider {
+    struct TasksRow_Previews: PreviewProvider {
         static var previews: some View {
             TasksRow(task: sampleStore.tasksState.tasks[0]).environmentObject(sampleStore)
         }

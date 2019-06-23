@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct UsersList: View {
-    @EnvironmentObject var store: AppStore
+    @EnvironmentObject var store: AppState
 
     var userSection: some View {
         Section {

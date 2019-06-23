@@ -9,25 +9,28 @@
 import SwiftUI
 
 struct UserDetail: View {
-    @EnvironmentObject var store: AppStore
-    let user: User
+    @EnvironmentObject var store: AppState
+    var user: User
 
     var body: some View {
         VStack {
-            Text(user.name).font(.title)
-            HStack(alignment: .leading, spacing: 8) {
-                Text(user.nickname).font(.title)
-                Text(user.id)
-                    .color(.secondary)
-            }.padding(.leading, 8)
-        }.padding(8)
+            AnyView(Text("UserDetail"))
+            AnyView(
+                Text(user.name).font(.title))
+            AnyView(
+                Text(user.username)
+            )
+//            AnyView(
+//                Text(user.id)
+//            )
+        }
     }
 }
 
 #if DEBUG
-    struct UsersList_Previews: PreviewProvider {
+    struct UserDetail_Previews: PreviewProvider {
         static var previews: some View {
-            UserDetail(user: sampleStore.usersState.users[0]).environmentObject(sampleStore)
+            UserDetail(user: testUsersModels[0]).environmentObject(sampleStore)
         }
     }
 #endif

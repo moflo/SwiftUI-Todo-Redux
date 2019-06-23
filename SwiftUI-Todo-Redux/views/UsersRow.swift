@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct UsersRow: View {
-    @EnvironmentObject var store: AppStore
+    @EnvironmentObject var store: AppState
     let user: User
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
                 Text(user.name).font(.title)
-                Text(user.nickname)
+                Text(user.username)
                     .color(.secondary)
             }.padding(.leading, 8)
         }.padding(8)
@@ -24,7 +24,7 @@ struct UsersRow: View {
 }
 
 #if DEBUG
-    struct UsersList_Previews: PreviewProvider {
+    struct UsersRow_Previews: PreviewProvider {
         static var previews: some View {
             UsersRow(user: sampleStore.usersState.users[0]).environmentObject(sampleStore)
         }

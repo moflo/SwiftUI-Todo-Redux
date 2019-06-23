@@ -10,9 +10,9 @@ import SwiftUI
 
 struct Task: Equatable, Hashable, Codable, Identifiable {
     let id: String
-    var title: String
-    var isDone: Bool
-    var owner: User?
+    let title: String
+    let isDone: Bool
+    let owner: User?
 
     init(title: String, isDone: Bool, owner: User? = nil) {
         id = UUID().uuidString

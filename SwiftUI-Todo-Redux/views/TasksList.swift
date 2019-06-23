@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TasksList: View {
-    @EnvironmentObject var store: AppStore
+    @EnvironmentObject var store: AppState
 
     var taskSection: some View {
         Section {
