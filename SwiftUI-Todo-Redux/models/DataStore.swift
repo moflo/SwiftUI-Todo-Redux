@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DataStore.swift
 //  SwiftUI-Todo-Redux
 //
 //  Created by moflo on 6/22/19.
@@ -30,13 +30,13 @@ struct DataStore {
         func path() -> String {
             switch self {
             case .users:
-                return "5d0ef6093200005700dc694d"
+                return "5d0fa0b83200001300dc6a82"
             case let .user(id):
-                return "5d0ef6093200005700dc694d/\(id)"
+                return "5d0f9ee93200006b00dc6a71/\(id)"
             case .tasks:
-                return "5d0ef6093200005700dc694d"
+                return "5d0fa0083200006100dc6a79"
             case let .task(id):
-                return "5d0ef6093200005700dc694d/\(id)"
+                return "5d0fa0773200005c00dc6a80/\(id)"
             }
         }
     }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  FluxState.swift
 //  SwiftUI-Todo-Redux
 //
 //  Created by moflo on 6/22/19.

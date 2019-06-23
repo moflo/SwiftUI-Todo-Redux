@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  SwiftUI-Todo-Redux
 //
 //  Created by moflo on 6/22/19.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     var body: some View {
         Text("SwiftUI Todo App With Redux State")
     }
@@ -17,7 +17,7 @@ struct ContentView: View {
 #if DEBUG
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            HomeView()
         }
     }
 #endif
