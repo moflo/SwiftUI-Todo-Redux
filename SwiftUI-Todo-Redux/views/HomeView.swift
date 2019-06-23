@@ -9,26 +9,32 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var store: AppStore
-    @State var selectedTab = Tab.tasks
-
-    enum Tab: Int {
-        case tasks, users
-    }
-
+//    @EnvironmentObject var store: AppStore
+    
     var body: some View {
-        TabbedView(selection: $selectedTab) {
-            TasksList().tabItemLabel(Text("Tasks")).tag(Tab.tasks)
-            UsersList().tabItemLabel(Text("Team")).tag(Tab.users)
-        }
-        .edgesIgnoringSafeArea(.top)
+        Text("HomeView")
     }
+    
+//    @State var selectedTab = Tab.tasks
+//
+//    enum Tab: Int {
+//        case tasks, users
+//    }
+//
+//    var body: some View {
+//        TabbedView(selection: $selectedTab) {
+//            TasksList().tabItemLabel(Text("Tasks")).tag(Tab.tasks)
+//            UsersList().tabItemLabel(Text("Team")).tag(Tab.users)
+//        }
+//        .edgesIgnoringSafeArea(.top)
+//    }
 }
 
 #if DEBUG
     struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
-            HomeView().environmentObject(sampleStore)
+//            HomeView().environmentObject(sampleStore)
+            HomeView()
         }
     }
 #endif
