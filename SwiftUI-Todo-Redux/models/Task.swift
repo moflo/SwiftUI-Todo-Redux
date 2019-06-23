@@ -12,11 +12,13 @@ struct Task: Equatable, Hashable, Codable, Identifiable {
     let id: UUID
     var title: String
     var isDone: Bool
+    var owner: User?
 
-    init(title: String, isDone: Bool) {
+    init(title: String, isDone: Bool, owner :User? = nil) {
         id = UUID()
         self.title = title
         self.isDone = isDone
+        self.owner = owner
     }
 }
 
