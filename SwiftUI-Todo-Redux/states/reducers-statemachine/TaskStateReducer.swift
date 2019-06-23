@@ -12,49 +12,53 @@ struct TaskStateReducer: Reducer {
     func reduce(state: TasksState, action: Action) -> TasksState {
         var state = state
 
-        if let action = action as? TaskAction.GetTaskResponse {
+        if let action = action as? TaskActions.GetTaskResponse {
             let id = action.id
             let tasks = action.response.tasks
-            state.tasks.append(tasks)
+            state.tasks.append(contentsOf: tasks)
         }
 
-        switch action {
-        case TaskActions.addTask:
-            state.tasks.append(Task(id: state.tasks.count,
-                                    name: "New task \(state.tasks.count + 1)",
-                                    taskname: "@newtask\(state.tasks.count + 1)"))
+        /*
+         switch action {
 
-        case let TaskActions.deletTask(index):
-            state.tasks.remove(at: index)
+         case TaskActions.addTask:
+             state.tasks.append(Task(id: state.tasks.count,
+                                     name: "New task \(state.tasks.count + 1)",
+                                     taskname: "@newtask\(state.tasks.count + 1)"))
 
-        case let TaskActions.move(from, to):
-            let task = state.tasks.remove(at: from)
-            state.tasks.insert(task, at: to)
+         case let TaskActions.deletTask(index):
+             state.tasks.remove(at: index)
 
-        case let TaskActions.editTask(id, name, description, owner):
-            var task = state.tasks[id]
-            task.name = name
-            task.taskname = taskname
-            state.tasks[id] = task
+         case let TaskActions.move(from, to):
+             let task = state.tasks.remove(at: from)
+             state.tasks.insert(task, at: to)
 
-        case let TaskActions.markTaskDone(id):
-            var task = state.tasks[id]
-            task.isDone.toggle()
+         case let TaskActions.editTask(id, name, description, owner):
+             var task = state.tasks[id]
+             task.name = name
+             task.taskname = taskname
+             state.tasks[id] = task
 
-        case TaskActions.testEditBlankTask:
-            if !state.tasks.isEmpty {
-                state.tasks[0] = Task(id: 0, name: "task1", taskname: "u\ns\ne\nr\nn\na\nm\ne")
-            }
+         case let TaskActions.markTaskDone(id):
+             var task = state.tasks[id]
+             task.isDone.toggle()
 
-        case TaskActions.startEditTask:
-            state.isEditingtask = true
+         case TaskActions.testEditBlankTask:
+             if !state.tasks.isEmpty {
+                 state.tasks[0] = Task(id: 0, name: "task1", taskname: "u\ns\ne\nr\nn\na\nm\ne")
+             }
 
-        case TaskActions.stopEditTask:
-            state.isEditingtask = false
+         case TaskActions.startEditTask:
+             state.isEditingtask = true
 
-        default:
-            break
-        }
+         case TaskActions.stopEditTask:
+             state.isEditingtask = false
+
+         default:
+             break
+         }
+         */
+
         return state
     }
 }

@@ -26,6 +26,8 @@
 		843B2B8322BF1EB7001E89B6 /* UsersState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7922BF1EB7001E89B6 /* UsersState.swift */; };
 		843B2B8422BF1EB7001E89B6 /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7A22BF1EB7001E89B6 /* FluxState.swift */; };
 		843B2B8522BF1EB7001E89B6 /* TasksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B7B22BF1EB7001E89B6 /* TasksState.swift */; };
+		843B2B8922BF494B001E89B6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B8722BF494B001E89B6 /* DataStore.swift */; };
+		843B2B8A22BF494B001E89B6 /* TaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B8822BF494B001E89B6 /* TaskResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		843B2B7A22BF1EB7001E89B6 /* FluxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxState.swift; sourceTree = "<group>"; };
 		843B2B7B22BF1EB7001E89B6 /* TasksState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksState.swift; sourceTree = "<group>"; };
 		843B2B8622BF2983001E89B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		843B2B8722BF494B001E89B6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		843B2B8822BF494B001E89B6 /* TaskResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +120,11 @@
 		843B2B6722BF1E35001E89B6 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				843B2B8722BF494B001E89B6 /* DataStore.swift */,
 				843B2B6822BF1E35001E89B6 /* User.swift */,
 				843B2B6922BF1E35001E89B6 /* UserResponse.swift */,
 				843B2B6A22BF1E35001E89B6 /* Task.swift */,
+				843B2B8822BF494B001E89B6 /* TaskResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -238,12 +244,14 @@
 			files = (
 				843B2B8322BF1EB7001E89B6 /* UsersState.swift in Sources */,
 				843B2B6C22BF1E35001E89B6 /* UserResponse.swift in Sources */,
+				843B2B8922BF494B001E89B6 /* DataStore.swift in Sources */,
 				843B2B8522BF1EB7001E89B6 /* TasksState.swift in Sources */,
 				843B2B8122BF1EB7001E89B6 /* Action.swift in Sources */,
 				843B2B8022BF1EB7001E89B6 /* TaskActions.swift in Sources */,
 				843B2B8422BF1EB7001E89B6 /* FluxState.swift in Sources */,
 				843B2B7F22BF1EB7001E89B6 /* TaskStateReducer.swift in Sources */,
 				843B2B7E22BF1EB7001E89B6 /* UserStateReducer.swift in Sources */,
+				843B2B8A22BF494B001E89B6 /* TaskResponse.swift in Sources */,
 				843B2B8222BF1EB7001E89B6 /* UserActions.swift in Sources */,
 				843B2B6B22BF1E35001E89B6 /* User.swift in Sources */,
 				843B2B7D22BF1EB7001E89B6 /* Reducer.swift in Sources */,

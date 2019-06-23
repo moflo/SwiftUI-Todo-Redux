@@ -11,8 +11,8 @@ import Foundation
 struct UserActions {
     struct getUsers: Action {
         init() {
-            APIService.shared.GET(endpoint: .users, params: nil) {
-                (result: Result<UserResponseJSON, APIService.APIError>) in
+            DataStore.shared.GET(endpoint: .users, params: nil) {
+                (result: Result<UserResponseJSON, DataStore.APIError>) in
                 switch result {
                 case let .success(response):
                     store.dispatch(action: UserAddResponse(id: response.id, response: response))
@@ -50,7 +50,29 @@ struct UserActions {
     // MARK: Response Structs
 
     struct UserAddResponse: Action {
-        let id: String
+        let id: Int
+        let response: UserResponseJSON
+    }
+
+    struct UserDeleteResponse: Action {
+        let id: Int
+        let response: UserResponseJSON
+    }
+
+    struct UserMoveResponse: Action {
+        let id: Int
+        let to: Int
+        let from: Int
+        let response: UserResponseJSON
+    }
+
+    struct EditUserResponse: Action {
+        let id: Int
+        let response: UserResponseJSON
+    }
+
+    struct TestEditResponse: Action {
+        let id: Int
         let response: UserResponseJSON
     }
 }

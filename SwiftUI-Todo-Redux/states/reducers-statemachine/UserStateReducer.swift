@@ -42,11 +42,13 @@ struct UserStateReducer: Reducer {
             }
         }
 
-    case UserActions.startEditUser:
-        state.isEditingUser = true
+        if let action = action as? UserActions.startEditUser {
+            state.isEditingUser = true
+        }
 
-    case UserActions.stopEditUser:
-        state.isEditingUser = false
+        if let action = action as? UserActions.stopEditUser {
+            state.isEditingUser = false
+        }
 
         return state
     }

@@ -12,7 +12,7 @@ struct TaskActions {
     struct getTasks: Action {
         init() {
             DataStore.shared.GET(endpoint: .tasks, params: nil) {
-                (result: Result<TaskResponseJSON, APIService.APIError>) in
+                (result: Result<TaskResponseJSON, DataStore.APIError>) in
                 switch result {
                 case let .success(response):
                     store.dispatch(action: GetTaskResponse(id: 0, response: response))

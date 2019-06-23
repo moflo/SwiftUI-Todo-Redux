@@ -69,7 +69,7 @@ struct DataStore {
                 let object = try self.decoder.decode(T.self, from: data)
                 completionHandler(.success(object))
             } catch {
-                print("JSON decoding error (GET)", T, error)
+                print("JSON decoding error (GET)", T.self, error)
                 completionHandler(.failure(.jsonDecodingError(error: error)))
             }
         }
@@ -104,7 +104,7 @@ struct DataStore {
                 let object = try self.decoder.decode(T.self, from: data)
                 completionHandler(.success(object))
             } catch {
-                print("JSON decoding error (POST)", T, error)
+                print("JSON decoding error (POST)", T.self, error)
                 completionHandler(.failure(.jsonDecodingError(error: error)))
             }
         }
