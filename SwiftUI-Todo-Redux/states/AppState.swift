@@ -22,8 +22,8 @@ final class AppState: BindableObject {
     }
 
     func dispatch(action: Action) {
-        self.usersState = UserStateReducer().reduce(state: self.usersState, action: action)
-        self.tasksState = TaskStateReducer().reduce(state: self.tasksState, action: action)
+        usersState = UserStateReducer().reduce(state: usersState, action: action)
+        tasksState = TaskStateReducer().reduce(state: tasksState, action: action)
         DispatchQueue.main.async {
             self.didChange.send(self)
         }
@@ -35,6 +35,7 @@ let store = AppState()
 
 #if DEBUG
     let sampleStore = AppState(
-            usersState: UsersState(users: testUsersModels),
-            tasksState: TasksState(tasks: testTasksModels))
+        usersState: UsersState(users: testUsersModels),
+        tasksState: TasksState(tasks: testTasksModels)
+    )
 #endif
