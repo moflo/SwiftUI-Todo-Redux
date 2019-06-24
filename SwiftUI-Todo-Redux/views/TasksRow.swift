@@ -21,7 +21,7 @@ struct TasksRow: View {
             } else {
                 Image(systemName: "checkmark.circle")
                     .font(.system(size: 60))
-                .foregroundColor(.gray)
+                    .foregroundColor(.gray)
             }
             VStack(alignment: .leading, spacing: 8) {
                 Text(task.title).font(.title)
@@ -36,8 +36,8 @@ struct TasksRow: View {
     struct TasksRow_Previews: PreviewProvider {
         static var previews: some View {
             Group {
-            TasksRow(task: Task(title: "New Task", isDone: true)).environmentObject(sampleStore)
-                
+                TasksRow(task: Task(title: "New Task", isDone: true)).environmentObject(sampleStore)
+
                 TasksRow(task: Task(title: "New Task", isDone: false)).environmentObject(sampleStore)
             }
         }

@@ -15,7 +15,7 @@ struct TasksList: View {
         print("loadPage")
         store.dispatch(action: TaskActions.getTasks())
     }
-    
+
     var taskSection: some View {
         Section {
             ForEach(store.tasksState.tasks) { task in
@@ -35,7 +35,6 @@ struct TasksList: View {
             .onAppear {
                 self.loadPage()
             }
-
         }
     }
 }
