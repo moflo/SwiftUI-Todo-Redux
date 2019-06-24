@@ -114,7 +114,7 @@ struct RoundedButton: View {
 
 struct TaskEdit: View {
     @EnvironmentObject var store: AppState
-    @ObjectBinding private var kGuardian = KeyboardGuardian(textFieldCount: 1)
+    // @ObjectBinding private var kGuardian = KeyboardGuardian(textFieldCount: 1)
     let task: Task
 
     var body: some View {
@@ -124,6 +124,13 @@ struct TaskEdit: View {
                     VStack(alignment: .leading) {
                         FieldSetText(label: "TITLE", placeHolder: "Task title")
                         FieldSetText(label: "DESCRIPTION", placeHolder: "Task description")
+
+                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
+                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
+                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
+                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
+                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
+
                     }
                     .padding(.vertical, 20)
                     .listRowInsets(EdgeInsets())
@@ -138,7 +145,7 @@ struct TaskEdit: View {
 
                 RoundedButton().padding(.vertical, 20)
             }
-            .offset(y: kGuardian.slide).animation(.basic(duration: 1.0))
+            // .offset(y: kGuardian.slide).animation(.basic(duration: 1.0))
             .navigationBarTitle(Text("New Task"))
             .navigationBarItems(leading:
                 Button(action: {}, label: {
