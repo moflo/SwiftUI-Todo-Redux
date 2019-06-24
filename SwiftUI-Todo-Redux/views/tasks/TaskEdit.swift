@@ -47,15 +47,24 @@ struct TaskEdit: View {
 
     var body: some View {
         NavigationView {
-            List {
-                VStack(alignment: .leading) {
-                    FieldSetText(label: "TITLE", placeHolder: "Task title")
-                    FieldSetText(label: "DESCRIPTION", placeHolder: "Task description")
-
-                    RoundedButton().padding(.top, 20)
+            Form {
+                Section(header: Text("Task Information")) {
+                    VStack(alignment: .leading) {
+                        FieldSetText(label: "TITLE", placeHolder: "Task title")
+                        FieldSetText(label: "DESCRIPTION", placeHolder: "Task description")
+                    }
+                    .padding(.vertical, 20)
+                    .listRowInsets(EdgeInsets())
                 }
-                .padding(.top, 20)
-                .listRowInsets(EdgeInsets())
+                Section(header: Text("Task Owner")) {
+                    VStack(alignment: .leading) {
+                        FieldSetText(label: "OWNER", placeHolder: "Task owner")
+                    }
+                    .padding(.vertical, 20)
+                    .listRowInsets(EdgeInsets())
+                }
+
+                RoundedButton().padding(.vertical, 20)
             }
 
             .navigationBarTitle(Text("New Task"))
