@@ -115,6 +115,26 @@
 			path = "SwiftUI-Todo-ReduxTests";
 			sourceTree = "<group>";
 		};
+		841655AF22C140B4007DF30E /* tasks */ = {
+			isa = PBXGroup;
+			children = (
+				8416559022BFF7C5007DF30E /* TaskDetail.swift */,
+				8416559522BFF7C6007DF30E /* TasksList.swift */,
+				8416559222BFF7C5007DF30E /* TasksRow.swift */,
+			);
+			path = tasks;
+			sourceTree = "<group>";
+		};
+		841655B022C140FE007DF30E /* users */ = {
+			isa = PBXGroup;
+			children = (
+				8416559322BFF7C5007DF30E /* UserDetail.swift */,
+				8416559422BFF7C6007DF30E /* UsersList.swift */,
+				8416559122BFF7C5007DF30E /* UsersRow.swift */,
+			);
+			path = users;
+			sourceTree = "<group>";
+		};
 		843B2B3E22BE9B1D001E89B6 = {
 			isa = PBXGroup;
 			children = (
@@ -162,12 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				8416558E22BFF4EE007DF30E /* HomeView.swift */,
-				8416559022BFF7C5007DF30E /* TaskDetail.swift */,
-				8416559522BFF7C6007DF30E /* TasksList.swift */,
-				8416559222BFF7C5007DF30E /* TasksRow.swift */,
-				8416559322BFF7C5007DF30E /* UserDetail.swift */,
-				8416559422BFF7C6007DF30E /* UsersList.swift */,
-				8416559122BFF7C5007DF30E /* UsersRow.swift */,
+				841655AF22C140B4007DF30E /* tasks */,
+				841655B022C140FE007DF30E /* users */,
 			);
 			path = views;
 			sourceTree = "<group>";
