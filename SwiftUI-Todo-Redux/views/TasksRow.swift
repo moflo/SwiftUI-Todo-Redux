@@ -17,9 +17,11 @@ struct TasksRow: View {
             if task.isDone {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 60))
+                    .foregroundColor(.green)
             } else {
                 Image(systemName: "checkmark.circle")
                     .font(.system(size: 60))
+                .foregroundColor(.gray)
             }
             VStack(alignment: .leading, spacing: 8) {
                 Text(task.title).font(.title)
@@ -33,7 +35,11 @@ struct TasksRow: View {
 #if DEBUG
     struct TasksRow_Previews: PreviewProvider {
         static var previews: some View {
-            TasksRow(task: Task(title: "New Task", isDone: false)).environmentObject(sampleStore)
+            Group {
+            TasksRow(task: Task(title: "New Task", isDone: true)).environmentObject(sampleStore)
+                
+                TasksRow(task: Task(title: "New Task", isDone: false)).environmentObject(sampleStore)
+            }
         }
     }
 #endif
