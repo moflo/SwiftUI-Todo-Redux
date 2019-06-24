@@ -32,7 +32,9 @@ struct TaskEdit: View {
 #if DEBUG
 struct TasksEdit_Previews: PreviewProvider {
     static var previews: some View {
-        TaskEdit(task: sampleStore.tasksState.tasks[0]).environmentObject(sampleStore)
+        TaskEdit(task: sampleStore.tasksState.tasks[0])
+            .environmentObject(sampleStore)
+            .previewLayout(.fixed(width: 375, height: 1000))
     }
 }
 #endif
