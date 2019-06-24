@@ -14,10 +14,12 @@ struct TasksRow: View {
 
     var body: some View {
         HStack {
-            if task.isDone == true {
-                Text("Done")
+            if task.isDone {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 60))
             } else {
-                Text("Not Done")
+                Image(systemName: "checkmark.circle")
+                    .font(.system(size: 60))
             }
             VStack(alignment: .leading, spacing: 8) {
                 Text(task.title).font(.title)
@@ -31,7 +33,7 @@ struct TasksRow: View {
 #if DEBUG
     struct TasksRow_Previews: PreviewProvider {
         static var previews: some View {
-            TasksRow(task: sampleStore.tasksState.tasks[0]).environmentObject(sampleStore)
+            TasksRow(task: Task(title: "New Task", isDone: false)).environmentObject(sampleStore)
         }
     }
 #endif
