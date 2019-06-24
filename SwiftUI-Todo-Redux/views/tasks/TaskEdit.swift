@@ -62,7 +62,7 @@ struct TaskEdit: View {
             .navigationBarItems(leading:
                 Button(action: {}, label: {
                     Text("Cancel")
-            }),trailing:
+                }), trailing:
                 Button(action: {}, label: {
                     Text("Save")
             }))
