@@ -58,12 +58,11 @@ struct TaskEdit: View {
                 .listRowInsets(EdgeInsets())
             }
 
-            .navigationBarTitle(Text("New Restaurant"))
+            .navigationBarTitle(Text("New Task"))
             .navigationBarItems(leading:
                 Button(action: {}, label: {
                     Text("Cancel")
-            }))
-            .navigationBarItems(trailing:
+            }),trailing:
                 Button(action: {}, label: {
                     Text("Save")
             }))
