@@ -15,14 +15,14 @@ struct TaskDetail: View {
     @EnvironmentObject var store: AppState
 
     @Environment(\.editMode) var mode
-    @State var task: Task {
-        didSet {
-            draftTask = task
-        }
-    }
-
-    @State var draftTask = Task(title: "placeholder", isDone: false)
+    @State var task: Task 
+    @State var draftTask: Task? = Task(title: "placeholder", isDone: false)
     @State var ownerName: String = ""
+
+    init(task: Task, draftTask: Task? = nil, ownerName: String = "") {
+        self.task = task
+        self.draftTask = task
+    }
 
     var TaskSummary: some View {
         VStack {
