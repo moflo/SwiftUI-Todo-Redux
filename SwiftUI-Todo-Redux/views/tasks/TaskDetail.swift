@@ -16,6 +16,7 @@ struct TaskDetail: View {
 
     @Environment(\.editMode) var mode
     @State var task: Task
+    /// Value of `draftTask` is set to `task` using the Form `.onAppear` call
     @State var draftTask: Task = Task(title: "placeholder", isDone: false)
     @State var ownerName: String = ""
 
