@@ -114,18 +114,14 @@ struct TaskEdit: View {
     @EnvironmentObject var store: AppState
     // @ObjectBinding private var kGuardian = KeyboardGuardian(textFieldCount: 1)
     var task: Task?
-    var isEditing: Binding<Bool>? // Used to dismiss Modal presentation
-
-    init(task _: Task? = nil, showEdit: Binding<Bool>? = nil) {
-        isEditing = showEdit
-    }
+    @Binding var isEditing: Bool // Used to dismiss Modal presentation
 
     func doCancel() {
-        isEditing?.value = false // Dismiss Modal presentation
+        isEditing = false // Dismiss Modal presentation
     }
 
     func doSave() {
-        isEditing?.value = false // Dismiss Modal presentation
+        isEditing = false // Dismiss Modal presentation
     }
 
     var body: some View {
@@ -171,7 +167,7 @@ struct TaskEdit: View {
 #if DEBUG
     struct TasksEdit_Previews: PreviewProvider {
         static var previews: some View {
-            TaskEdit(task: sampleStore.tasksState.tasks[0])
+            return TaskEdit(task: sampleStore.tasksState.tasks[0], isEditing: .constant(true))
                 .environmentObject(sampleStore)
                 .previewLayout(.fixed(width: 375, height: 1000))
         }

@@ -28,7 +28,7 @@ struct TasksList: View {
     }
 
     var taskEditModal: Modal {
-        return Modal(TaskEdit(task: nil, showEdit: $showEdit).environmentObject(store))
+        return Modal(TaskEdit(task: nil, isEditing: $showEdit).environmentObject(store))
     }
 
     var body: some View {
@@ -37,7 +37,7 @@ struct TasksList: View {
                 taskSection
 
                 NavigationButton(
-                    destination: TaskEdit(task: nil),
+                    destination: TaskEdit(task: nil, isEditing: $showEdit),
                     label: { Text("Add") }
                 )
             }
@@ -47,7 +47,7 @@ struct TasksList: View {
                                 HStack {
                                     Button(action: { self.showEdit.toggle() }, label: { Text("Add1") })
                                     NavigationButton(
-                                        destination: TaskEdit(task: nil),
+                                        destination: TaskEdit(task: nil, isEditing: $showEdit),
                                         label: { Text("Add2") }
                                     )
             })
