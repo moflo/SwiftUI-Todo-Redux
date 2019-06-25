@@ -16,13 +16,9 @@ struct TaskDetail: View {
 
     @Environment(\.editMode) var mode
     @State var task: Task 
-    @State var draftTask: Task? = Task(title: "placeholder", isDone: false)
+    @State var draftTask: Task = Task(title: "placeholder", isDone: false)
     @State var ownerName: String = ""
 
-    init(task: Task, draftTask: Task? = nil, ownerName: String = "") {
-        self.task = task
-        self.draftTask = task
-    }
 
     var TaskSummary: some View {
         VStack {
@@ -59,6 +55,7 @@ struct TaskDetail: View {
 
             RoundedButton().padding(.vertical, 20)
         }
+        .onAppear(perform: { self.draftTask = self.task })
     }
 
     var body: some View {
