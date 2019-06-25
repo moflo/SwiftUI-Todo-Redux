@@ -21,7 +21,7 @@ struct TaskDetail: View {
         }
     }
 
-    @State var draftTask = Task(title: "New xx", isDone: false)
+    @State var draftTask = Task(title: "placeholder", isDone: false)
     @State var ownerName: String = ""
 
     var TaskSummary: some View {
