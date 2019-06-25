@@ -10,8 +10,8 @@ import SwiftUI
 
 struct Task: Equatable, Hashable, Codable, Identifiable {
     let id: String
-    let title: String
-    let isDone: Bool
+    var title: String
+    var isDone: Bool
     let owner: User?
 
     init(title: String, isDone: Bool, owner: User? = nil) {

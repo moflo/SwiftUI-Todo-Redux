@@ -17,7 +17,7 @@ struct FieldSetText: View {
     var placeHolder: String
 
     var body: some View {
-        return VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
             Text(label)
                 .font(.headline)
             TextField($textItem, placeholder: Text(placeHolder))
