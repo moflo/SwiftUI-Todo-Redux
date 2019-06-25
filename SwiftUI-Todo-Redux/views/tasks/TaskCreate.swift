@@ -20,16 +20,16 @@ struct TaskCreate: View {
     var task: Task = Task(title: "New task", isDone: false)
 
     /// Used to dismiss Modal presentation
-    @Binding var isEditing: Bool 
+    @Binding var isEditing: Bool
 
     /// Dismiss Modal presentation
     func doCancel() {
-        isEditing = false 
+        isEditing = false
     }
 
     /// Dismiss Modal presentation, save updated task if valid
     func doSave() {
-        isEditing = false 
+        isEditing = false
     }
 
     var body: some View {
@@ -75,7 +75,7 @@ struct TaskCreate: View {
 #if DEBUG
     struct TasksEdit_Previews: PreviewProvider {
         static var previews: some View {
-            return TaskEdit(task: sampleStore.tasksState.tasks[0], isEditing: .constant(true))
+            return TaskCreate(isEditing: .constant(true))
                 .environmentObject(sampleStore)
                 .previewLayout(.fixed(width: 375, height: 1000))
         }

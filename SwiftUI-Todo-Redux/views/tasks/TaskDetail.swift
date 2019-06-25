@@ -8,16 +8,15 @@
 
 import SwiftUI
 
-
 // Based on "in-line" detail editing structure proposed by Apple
 /// https://developer.apple.com/tutorials/swiftui/working-with-ui-controls
 
 struct TaskDetail: View {
     @EnvironmentObject var store: AppState
-    let task: Task
 
     @Environment(\.editMode) var mode
-    @State var draftTask = task // Task(title: "New task", isDone: false)
+    @State var task: Task
+    @State var draftTask = Task(title: "New task", isDone: false)
 
     var TaskSummary: some View {
         VStack {
@@ -70,7 +69,7 @@ struct TaskDetail: View {
                     Button(action: {
                         self.mode?.animation().value = .inactive
                         // Update current taskID
-                        self.taslk = self.draftTask
+                        self.task = self.draftTask
                         // store.dispatch(aciton: TaskActions.updateTask(id: task.id, task: draftTask))
                     }) {
                         Text("Save")
