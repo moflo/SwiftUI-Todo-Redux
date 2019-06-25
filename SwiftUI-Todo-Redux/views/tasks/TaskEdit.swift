@@ -114,17 +114,21 @@ struct TaskEdit: View {
     @EnvironmentObject var store: AppState
     // @ObjectBinding private var kGuardian = KeyboardGuardian(textFieldCount: 1)
     var task: Task? = nil
-
-    init(task: Task? = nil) {
+    var _showEdit : Binding<Bool>? = nil    // Used to dismiss Modal presentation
+    
+    init(task: Task? = nil, showEdit: Binding<Bool>? = nil) {
         print("TaskEdit init")
+        _showEdit = showEdit
     }
     
     func doCancel() {
         print("Cancel edit")
+        _showEdit?.value = false    // Dismiss Modal presentation
     }
     
     func doSave() {
         print("Save edits")
+        _showEdit?.value = false    // Dismiss Modal presentation
     }
     
     var body: some View {

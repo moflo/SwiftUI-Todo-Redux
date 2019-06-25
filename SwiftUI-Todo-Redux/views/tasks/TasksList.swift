@@ -28,7 +28,7 @@ struct TasksList: View {
     }
 
     var taskEditModal : Modal {
-       return Modal(TaskEdit(task: nil).environmentObject(store))
+        return Modal(TaskEdit(task: nil, showEdit: $showEdit).environmentObject(store))
     }
     
     var body: some View {
