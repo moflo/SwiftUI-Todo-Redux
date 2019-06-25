@@ -9,7 +9,6 @@
 import Combine
 import SwiftUI
 
-
 struct TaskEdit: View {
     @EnvironmentObject var store: AppState
     // @ObjectBinding private var kGuardian = KeyboardObserver(textFieldCount: 1)
