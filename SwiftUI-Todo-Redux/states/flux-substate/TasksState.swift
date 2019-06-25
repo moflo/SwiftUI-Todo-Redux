@@ -12,7 +12,8 @@ import SwiftUI
 
 struct TasksState: FluxState {
     var tasks: [Task]
-    var isEditingTask = false
+    var hasTaskError = false
+    var taskErrorMessage = ""
 
     init(tasks: [Task] = []) {
         self.tasks = tasks

@@ -67,6 +67,8 @@ struct TaskDetail: View {
                         // Update current taskID
                         self.task = self.draftTask
                         // store.dispatch(aciton: TaskActions.updateTask(id: task.id, task: draftTask))
+                        store.dispatch(action: TaskActions.Notification(message: "Changes saved"))
+
                     }) {
                         Text("Save")
                     }

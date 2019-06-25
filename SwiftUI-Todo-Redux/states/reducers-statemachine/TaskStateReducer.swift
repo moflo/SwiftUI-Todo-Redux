@@ -18,6 +18,11 @@ struct TaskStateReducer: Reducer {
             state.tasks.append(contentsOf: tasks)
         }
 
+        if let action = action as ? TaskActions.Notification {
+            let message = action.message
+            state.tasks.hasTaskError = true
+            state.tasks.taskErrorMessage = message
+        }
         /*
          switch action {
 
@@ -49,10 +54,10 @@ struct TaskStateReducer: Reducer {
              }
 
          case TaskActions.startEditTask:
-             state.isEditingtask = true
+             state.hasTaskError = true
 
          case TaskActions.stopEditTask:
-             state.isEditingtask = false
+             state.hasTaskError = false
 
          default:
              break

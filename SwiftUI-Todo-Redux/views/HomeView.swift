@@ -23,6 +23,10 @@ struct HomeView: View {
             UsersList().tabItemLabel(VStack { Image("tab_user"); Text("Team") }).tag(Tab.users)
         }
         .edgesIgnoringSafeArea(.top)
+
+        NotificationBadge(text: "Message goes here", color: .blue, show: $store.tasksState.hasTaskError)
+        .padding(.bottom, 10)
+
     }
 }
 

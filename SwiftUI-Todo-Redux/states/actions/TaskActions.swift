@@ -57,4 +57,9 @@ struct TaskActions {
         let id: Int
         let response: TaskResponseJSON
     }
+
+    struct Notification: Action {
+        let message: String
+    }
+
 }
