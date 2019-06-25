@@ -21,6 +21,8 @@
 		841655AD22C02AAE007DF30E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B6A22BF1E35001E89B6 /* Task.swift */; };
 		841655AE22C02AAE007DF30E /* TaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B8822BF494B001E89B6 /* TaskResponse.swift */; };
 		841655B222C141EF007DF30E /* TaskEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841655B122C141EF007DF30E /* TaskEdit.swift */; };
+		841655B622C1E2CF007DF30E /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841655B422C1E2CF007DF30E /* KeyboardObserver.swift */; };
+		841655B722C1E2CF007DF30E /* FormButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841655B522C1E2CF007DF30E /* FormButtons.swift */; };
 		843B2B4B22BE9B1D001E89B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */; };
 		843B2B4D22BE9B1D001E89B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */; };
 		843B2B5122BE9B1F001E89B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843B2B5022BE9B1F001E89B6 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		841655A222C029E6007DF30E /* SwiftUI_Todo_ReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Todo_ReduxTests.swift; sourceTree = "<group>"; };
 		841655A422C029E6007DF30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841655B122C141EF007DF30E /* TaskEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEdit.swift; sourceTree = "<group>"; };
+		841655B422C1E2CF007DF30E /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		841655B522C1E2CF007DF30E /* FormButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormButtons.swift; sourceTree = "<group>"; };
 		843B2B4722BE9B1D001E89B6 /* SwiftUI-Todo-Redux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Todo-Redux.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +142,15 @@
 			path = users;
 			sourceTree = "<group>";
 		};
+		841655B322C1E2CF007DF30E /* common */ = {
+			isa = PBXGroup;
+			children = (
+				841655B422C1E2CF007DF30E /* KeyboardObserver.swift */,
+				841655B522C1E2CF007DF30E /* FormButtons.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		843B2B3E22BE9B1D001E89B6 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				8416558E22BFF4EE007DF30E /* HomeView.swift */,
+				841655B322C1E2CF007DF30E /* common */,
 				841655AF22C140B4007DF30E /* tasks */,
 				841655B022C140FE007DF30E /* users */,
 			);
@@ -372,7 +386,9 @@
 				843B2B8A22BF494B001E89B6 /* TaskResponse.swift in Sources */,
 				843B2B8222BF1EB7001E89B6 /* UserActions.swift in Sources */,
 				8416559B22BFF7C6007DF30E /* TasksList.swift in Sources */,
+				841655B722C1E2CF007DF30E /* FormButtons.swift in Sources */,
 				8416559A22BFF7C6007DF30E /* UsersList.swift in Sources */,
+				841655B622C1E2CF007DF30E /* KeyboardObserver.swift in Sources */,
 				843B2B6B22BF1E35001E89B6 /* User.swift in Sources */,
 				843B2B7D22BF1EB7001E89B6 /* Reducer.swift in Sources */,
 				843B2B7C22BF1EB7001E89B6 /* AppState.swift in Sources */,
