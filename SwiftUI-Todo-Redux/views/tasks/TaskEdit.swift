@@ -6,15 +6,15 @@
 //  Copyright © 2019 Mobile Flow LLC. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 // Class to respond to keyboard events
 
 final class KeyboardGuardian: BindableObject {
     let didChange = PassthroughSubject<Void, Never>()
 
-    public var rects: Array<CGRect>
+    public var rects: [CGRect]
     public var keyboardRect: CGRect = CGRect()
 
     // keyboardWillShow notification may be posted repeatedly,
@@ -34,11 +34,10 @@ final class KeyboardGuardian: BindableObject {
     }
 
     init(_ textFieldCount: Int = 0) {
-        self.rects = Array<CGRect>(repeating: CGRect(), count: textFieldCount)
+        rects = [CGRect](repeating: CGRect(), count: textFieldCount)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
-
     }
 
     deinit {
@@ -55,7 +54,7 @@ final class KeyboardGuardian: BindableObject {
         }
     }
 
-    @objc func keyBoardDidHide(notification: Notification) {
+    @objc func keyBoardDidHide(notification _: Notification) {
         keyboardIsHidden = true
         updateSlide()
     }
@@ -64,7 +63,7 @@ final class KeyboardGuardian: BindableObject {
         if keyboardIsHidden {
             slide = 0
         } else {
-            let tfRect = self.rects[self.showField]
+            let tfRect = rects[self.showField]
             let diff = keyboardRect.minY - tfRect.maxY
 
             if diff > 0 {
@@ -72,7 +71,6 @@ final class KeyboardGuardian: BindableObject {
             } else {
                 slide += min(diff, 0)
             }
-
         }
     }
 }
@@ -115,8 +113,20 @@ struct RoundedButton: View {
 struct TaskEdit: View {
     @EnvironmentObject var store: AppState
     // @ObjectBinding private var kGuardian = KeyboardGuardian(textFieldCount: 1)
-    let task: Task
+    var task: Task? = nil
 
+    init(task: Task? = nil) {
+        print("TaskEdit init")
+    }
+    
+    func doCancel() {
+        print("Cancel edit")
+    }
+    
+    func doSave() {
+        print("Save edits")
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -130,7 +140,6 @@ struct TaskEdit: View {
                         FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
                         FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
                         FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-
                     }
                     .padding(.vertical, 20)
                     .listRowInsets(EdgeInsets())
@@ -148,10 +157,10 @@ struct TaskEdit: View {
             // .offset(y: kGuardian.slide).animation(.basic(duration: 1.0))
             .navigationBarTitle(Text("New Task"))
             .navigationBarItems(leading:
-                Button(action: {}, label: {
+                Button(action: doCancel, label: {
                     Text("Cancel")
                 }), trailing:
-                Button(action: {}, label: {
+                Button(action: doSave, label: {
                     Text("Save")
             }))
         }
