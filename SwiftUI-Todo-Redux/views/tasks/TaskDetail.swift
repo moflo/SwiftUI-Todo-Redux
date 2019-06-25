@@ -15,10 +15,9 @@ struct TaskDetail: View {
     @EnvironmentObject var store: AppState
 
     @Environment(\.editMode) var mode
-    @State var task: Task 
+    @State var task: Task
     @State var draftTask: Task = Task(title: "placeholder", isDone: false)
     @State var ownerName: String = ""
-
 
     var TaskSummary: some View {
         VStack {
