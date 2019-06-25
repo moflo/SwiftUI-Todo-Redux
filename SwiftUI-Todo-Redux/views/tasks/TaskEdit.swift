@@ -117,17 +117,14 @@ struct TaskEdit: View {
     var isEditing: Binding<Bool>? // Used to dismiss Modal presentation
 
     init(task _: Task? = nil, showEdit: Binding<Bool>? = nil) {
-        print("TaskEdit init")
         isEditing = showEdit
     }
 
     func doCancel() {
-        print("Cancel edit")
         isEditing?.value = false // Dismiss Modal presentation
     }
 
     func doSave() {
-        print("Save edits")
         isEditing?.value = false // Dismiss Modal presentation
     }
 

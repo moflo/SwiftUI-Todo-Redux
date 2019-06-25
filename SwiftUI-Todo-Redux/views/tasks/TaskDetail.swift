@@ -12,7 +12,10 @@ struct TaskDetail: View {
     @EnvironmentObject var store: AppState
     let task: Task
 
-    var body: some View {
+    @Environment(\.editMode) var mode
+    @State var draftTask = Task(title: "New task", isDone: false)
+
+    var TaskSummary: some View {
         VStack {
             Text("TaskDetail")
             AnyView(
@@ -26,6 +29,30 @@ struct TaskDetail: View {
                 Text("Not Done")
             }
         }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+                if self.mode?.value == .active {
+                    Button(action: {
+                        self.mode?.animation().value = .inactive
+                    }) {
+                        Text("Save")
+                    }
+                }
+
+                Spacer()
+
+                EditButton()
+            }
+            if self.mode?.value == .inactive {
+                TaskSummary
+            } else {
+                TaskEdit(task: $draftTask).environmentObject(store)
+            }
+        }
+        .padding()
     }
 }
 
