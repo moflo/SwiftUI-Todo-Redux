@@ -15,8 +15,14 @@ struct TaskDetail: View {
     @EnvironmentObject var store: AppState
 
     @Environment(\.editMode) var mode
-    @State var task: Task
-    @State var draftTask = Task(title: "New task", isDone: false)
+    @State var task: Task {
+        didSet {
+            draftTask = task
+        }
+    }
+
+    @State var draftTask = Task(title: "New xx", isDone: false)
+    @State var ownerName: String = ""
 
     var TaskSummary: some View {
         VStack {
@@ -38,21 +44,14 @@ struct TaskDetail: View {
         Form {
             Section(header: Text("Task Information")) {
                 VStack(alignment: .leading) {
-                    FieldSetText(label: "TITLE", placeHolder: "Task title")
-                    FieldSetText(label: "DESCRIPTION", placeHolder: "Task description")
-
-                    FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-                    FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-                    FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-                    FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-                    FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
+                    FieldSetText(textItem: $draftTask.title, label: "TITLE", placeHolder: "Task title")
                 }
                 .padding(.vertical, 20)
                 .listRowInsets(EdgeInsets())
             }
             Section(header: Text("Task Owner")) {
                 VStack(alignment: .leading) {
-                    FieldSetText(label: "OWNER", placeHolder: "Task owner")
+                    FieldSetText(textItem: $ownerName, label: "OWNER", placeHolder: "Task owner")
                 }
                 .padding(.vertical, 20)
                 .listRowInsets(EdgeInsets())

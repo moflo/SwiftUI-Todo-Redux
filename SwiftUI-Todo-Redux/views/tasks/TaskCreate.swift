@@ -17,7 +17,8 @@ struct TaskCreate: View {
     // @ObjectBinding private var kGuardian = KeyboardObserver(textFieldCount: 1)
 
     /// Default task
-    var task: Task = Task(title: "New task", isDone: false)
+    @State var task: Task = Task(title: "New task", isDone: false)
+    @State var ownerName: String = ""
 
     /// Used to dismiss Modal presentation
     @Binding var isEditing: Bool
@@ -37,21 +38,15 @@ struct TaskCreate: View {
             Form {
                 Section(header: Text("Task Information")) {
                     VStack(alignment: .leading) {
-                        FieldSetText(label: "TITLE", placeHolder: "Task title")
-                        FieldSetText(label: "DESCRIPTION", placeHolder: "Task description")
-
-                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
-                        FieldSetText(label: "DUMMY", placeHolder: "dummy placeholder")
+                        FieldSetText(textItem: $task.title, label: "TITLE", placeHolder: "Task title")
+//                        FieldSetText(textData: .constant(""), label: "DESCRIPTION", placeHolder: "Task description")
                     }
                     .padding(.vertical, 20)
                     .listRowInsets(EdgeInsets())
                 }
                 Section(header: Text("Task Owner")) {
                     VStack(alignment: .leading) {
-                        FieldSetText(label: "OWNER", placeHolder: "Task owner")
+                        FieldSetText(textItem: $ownerName, label: "OWNER", placeHolder: "Task owner")
                     }
                     .padding(.vertical, 20)
                     .listRowInsets(EdgeInsets())

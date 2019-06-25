@@ -12,14 +12,15 @@ import SwiftUI
 // Class to respond to editText commit, change responder / focus
 
 struct FieldSetText: View {
+    @Binding var textItem: String
     var label: String
     var placeHolder: String
 
     var body: some View {
-        VStack(alignment: .leading) {
+        return VStack(alignment: .leading) {
             Text(label)
                 .font(.headline)
-            TextField(.constant(""), placeholder: Text(placeHolder))
+            TextField($textItem, placeholder: Text(placeHolder))
                 .padding(.all)
                 .background(Color("form-field-background"), cornerRadius: 5.0)
         }
