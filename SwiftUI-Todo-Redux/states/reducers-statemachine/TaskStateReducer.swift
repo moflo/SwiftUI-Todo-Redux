@@ -18,10 +18,11 @@ struct TaskStateReducer: Reducer {
             state.tasks.append(contentsOf: tasks)
         }
 
-        if let action = action as ? TaskActions.Notification {
+        if let action = action as? TaskActions.Notification {
+            let show = action.show
             let message = action.message
-            state.tasks.hasTaskError = true
-            state.tasks.taskErrorMessage = message
+            state.hasTaskError = show
+            state.taskErrorMessage = message
         }
         /*
          switch action {

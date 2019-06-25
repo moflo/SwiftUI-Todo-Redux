@@ -18,15 +18,16 @@ struct HomeView: View {
     }
 
     var body: some View {
-        TabbedView(selection: $selectedTab) {
-            TasksList().tabItemLabel(VStack { Image("tab_task"); Text("Tasks") }).tag(Tab.tasks)
-            UsersList().tabItemLabel(VStack { Image("tab_user"); Text("Team") }).tag(Tab.users)
+        ZStack {
+            TabbedView(selection: $selectedTab) {
+                TasksList().tabItemLabel(VStack { Image("tab_task"); Text("Tasks") }).tag(Tab.tasks)
+                UsersList().tabItemLabel(VStack { Image("tab_user"); Text("Team") }).tag(Tab.users)
+            }
+            .edgesIgnoringSafeArea(.top)
+
+            NotificationBadge(text: "Message goes here", color: .blue, show: $store.tasksState.hasTaskError)
+                .padding(.bottom, 10)
         }
-        .edgesIgnoringSafeArea(.top)
-
-        NotificationBadge(text: "Message goes here", color: .blue, show: $store.tasksState.hasTaskError)
-        .padding(.bottom, 10)
-
     }
 }
 

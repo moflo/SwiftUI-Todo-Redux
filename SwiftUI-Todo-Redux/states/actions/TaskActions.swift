@@ -59,7 +59,7 @@ struct TaskActions {
     }
 
     struct Notification: Action {
+        let show: Bool
         let message: String
     }
-
 }
