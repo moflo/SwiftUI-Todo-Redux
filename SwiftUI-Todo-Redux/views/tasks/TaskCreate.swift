@@ -1,5 +1,5 @@
 //
-//  TaskEdit
+//  TaskCreate
 //  SwiftUI-Todo-Redux
 //
 //  Created by moflo on 6/22/19.
@@ -9,18 +9,27 @@
 import Combine
 import SwiftUI
 
-struct TaskEdit: View {
+// Task Creation View, presented via a call to Modal()
+/// Use the `@Binding` variables to dismiss this Modal
+
+struct TaskCreate: View {
     @EnvironmentObject var store: AppState
     // @ObjectBinding private var kGuardian = KeyboardObserver(textFieldCount: 1)
-    var task: Task?
-    @Binding var isEditing: Bool // Used to dismiss Modal presentation
 
+    /// Default task
+    var task: Task = Task(title: "New task", isDone: false)
+
+    /// Used to dismiss Modal presentation
+    @Binding var isEditing: Bool 
+
+    /// Dismiss Modal presentation
     func doCancel() {
-        isEditing = false // Dismiss Modal presentation
+        isEditing = false 
     }
 
+    /// Dismiss Modal presentation, save updated task if valid
     func doSave() {
-        isEditing = false // Dismiss Modal presentation
+        isEditing = false 
     }
 
     var body: some View {
