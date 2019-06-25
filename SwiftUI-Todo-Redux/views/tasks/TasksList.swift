@@ -11,7 +11,7 @@ import SwiftUI
 struct TasksList: View {
     @EnvironmentObject var store: AppState
     @State var showEdit = false
-    
+
     func loadPage() {
         print("loadPage")
         store.dispatch(action: TaskActions.getTasks())
@@ -27,40 +27,36 @@ struct TasksList: View {
         }
     }
 
-    var taskEditModal : Modal {
+    var taskEditModal: Modal {
         return Modal(TaskEdit(task: nil, showEdit: $showEdit).environmentObject(store))
     }
-    
+
     var body: some View {
         NavigationView {
             List {
                 taskSection
-                
+
                 NavigationButton(
                     destination: TaskEdit(task: nil),
-                    label: {Text("Add")}
+                    label: { Text("Add") }
                 )
-
             }
             .navigationBarTitle(Text("My Tasks"))
             .navigationBarItems(leading: EditButton(),
-            trailing:
-                HStack {
-                Button(action: { self.showEdit.toggle() }, label: { Text("Add1") })
-                NavigationButton(
-                    destination: TaskEdit(task: nil),
-                    label: {Text("Add2")}
-                )
-                }
-            )
-            .presentation(self.showEdit ? self.taskEditModal : nil )
+                                trailing:
+                                HStack {
+                                    Button(action: { self.showEdit.toggle() }, label: { Text("Add1") })
+                                    NavigationButton(
+                                        destination: TaskEdit(task: nil),
+                                        label: { Text("Add2") }
+                                    )
+            })
+            .presentation(self.showEdit ? self.taskEditModal : nil)
             .onAppear {
                 self.loadPage()
             }
         }
     }
-
-    
 }
 
 #if DEBUG
