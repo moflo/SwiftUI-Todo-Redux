@@ -47,7 +47,7 @@ struct UserDetail: View {
     }
 
     var body: some View {
-        ZStack(alignment: .top) {
+        VStack(alignment: .leading) {
             HStack {
                 if self.mode?.value == .active {
                     Button(action: {

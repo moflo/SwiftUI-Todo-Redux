@@ -59,7 +59,7 @@ struct TaskDetail: View {
     }
 
     var body: some View {
-        ZStack(alignment: .top) {
+        VStack(alignment: .leading, spacing: 20) {
             HStack {
                 if self.mode?.value == .active {
                     Button(action: {
