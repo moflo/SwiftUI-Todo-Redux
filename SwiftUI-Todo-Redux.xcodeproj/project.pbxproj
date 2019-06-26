@@ -23,6 +23,7 @@
 		841655B622C1E2CF007DF30E /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841655B422C1E2CF007DF30E /* KeyboardObserver.swift */; };
 		841655B722C1E2CF007DF30E /* FormButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841655B522C1E2CF007DF30E /* FormButtons.swift */; };
 		841655B922C28590007DF30E /* TaskCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841655B822C28590007DF30E /* TaskCreate.swift */; };
+		841655BB22C301AF007DF30E /* UserCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841655BA22C301AF007DF30E /* UserCreate.swift */; };
 		843B2B4B22BE9B1D001E89B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */; };
 		843B2B4D22BE9B1D001E89B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */; };
 		843B2B5122BE9B1F001E89B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843B2B5022BE9B1F001E89B6 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		841655B422C1E2CF007DF30E /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		841655B522C1E2CF007DF30E /* FormButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormButtons.swift; sourceTree = "<group>"; };
 		841655B822C28590007DF30E /* TaskCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCreate.swift; sourceTree = "<group>"; };
+		841655BA22C301AF007DF30E /* UserCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreate.swift; sourceTree = "<group>"; };
 		843B2B4722BE9B1D001E89B6 /* SwiftUI-Todo-Redux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Todo-Redux.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843B2B4A22BE9B1D001E89B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843B2B4C22BE9B1D001E89B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				8416559422BFF7C6007DF30E /* UsersList.swift */,
 				8416559322BFF7C5007DF30E /* UserDetail.swift */,
+				841655BA22C301AF007DF30E /* UserCreate.swift */,
 				8416559122BFF7C5007DF30E /* UsersRow.swift */,
 			);
 			path = users;
@@ -387,6 +390,7 @@
 				843B2B8222BF1EB7001E89B6 /* UserActions.swift in Sources */,
 				8416559B22BFF7C6007DF30E /* TasksList.swift in Sources */,
 				841655B722C1E2CF007DF30E /* FormButtons.swift in Sources */,
+				841655BB22C301AF007DF30E /* UserCreate.swift in Sources */,
 				8416559A22BFF7C6007DF30E /* UsersList.swift in Sources */,
 				841655B622C1E2CF007DF30E /* KeyboardObserver.swift in Sources */,
 				843B2B6B22BF1E35001E89B6 /* User.swift in Sources */,

@@ -30,7 +30,7 @@ struct UserCreate: View {
     /// Dismiss Modal presentation, save updated user if valid
     func doSave() {
         isEditing = false
-        self.store.dispatch(action: TaskActions.Notification(show: true, message: "New User Created!"))
+        store.dispatch(action: TaskActions.Notification(show: true, message: "New User Created!"))
     }
 
     var body: some View {
@@ -38,8 +38,8 @@ struct UserCreate: View {
             Form {
                 Section(header: Text("User Information")) {
                     VStack(alignment: .leading) {
-                    FieldSetText(textItem: $user.name, label: "NAME", placeHolder: "User full name")
-                    FieldSetText(textItem: $user.username, label: "USERNAME", placeHolder: "User nickname")
+                        FieldSetText(textItem: $user.name, label: "NAME", placeHolder: "User full name")
+                        FieldSetText(textItem: $user.username, label: "USERNAME", placeHolder: "User nickname")
                     }
                     .padding(.vertical, 20)
                     .listRowInsets(EdgeInsets())

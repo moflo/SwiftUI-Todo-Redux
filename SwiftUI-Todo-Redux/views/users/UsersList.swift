@@ -10,6 +10,7 @@ import SwiftUI
 
 struct UsersList: View {
     @EnvironmentObject var store: AppState
+    @State var showEdit = false
 
     func loadPage() {
         print("loadPage")

@@ -14,8 +14,8 @@ struct UserStateReducer: Reducer {
 
         if let action = action as? UserActions.UserAddResponse {
             let id = action.id
-            let user = action.response.user
-            state.users.append(user)
+            let users = action.response.users
+            state.users.append(contentsOf: users)
         }
 
         if let action = action as? UserActions.UserDeleteResponse {
@@ -32,8 +32,8 @@ struct UserStateReducer: Reducer {
 
         if let action = action as? UserActions.EditUserResponse {
             let id = action.id
-            let user = action.response.user
-            state.users[id] = user
+            let users = action.response.users
+            state.users[id] = users[0]
         }
 
         if let action = action as? UserActions.TestEditResponse {

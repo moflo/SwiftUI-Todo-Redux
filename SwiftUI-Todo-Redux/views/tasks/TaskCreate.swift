@@ -31,7 +31,7 @@ struct TaskCreate: View {
     /// Dismiss Modal presentation, save updated task if valid
     func doSave() {
         isEditing = false
-        self.store.dispatch(action: TaskActions.Notification(show: true, message: "New Task Created!"))
+        store.dispatch(action: TaskActions.Notification(show: true, message: "New Task Created!"))
     }
 
     var body: some View {

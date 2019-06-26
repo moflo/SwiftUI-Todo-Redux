@@ -10,8 +10,8 @@ import SwiftUI
 
 struct User: Equatable, Hashable, Codable, Identifiable {
     let id: Int
-    let name: String
-    let username: String
+    var name: String
+    var username: String
     let imageName = "person"
 }
 

@@ -46,7 +46,7 @@ class SwiftUI_Todo_ReduxTests: XCTestCase {
         }
     }
 
-        func testEncodingUser() {
+    func testEncodingUser() {
         let json = #"""
         { "id": 1,
          "users":

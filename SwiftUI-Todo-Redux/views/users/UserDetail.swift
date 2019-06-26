@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct UserDetail: View {
-// Based on "in-line" detail editing structure proposed by Apple
-/// https://developer.apple.com/tutorials/swiftui/working-with-ui-controls
+    // Based on "in-line" detail editing structure proposed by Apple
+    /// https://developer.apple.com/tutorials/swiftui/working-with-ui-controls
 
     @EnvironmentObject var store: AppState
 
@@ -47,7 +47,7 @@ struct UserDetail: View {
     }
 
     var body: some View {
-        VStack(alignment: .top, spacing: 20) {
+        ZStack(alignment: .top) {
             HStack {
                 if self.mode?.value == .active {
                     Button(action: {
@@ -75,7 +75,6 @@ struct UserDetail: View {
         .padding()
     }
 }
-
 
 #if DEBUG
     struct UserDetail_Previews: PreviewProvider {
