@@ -18,16 +18,16 @@ struct HomeView: View {
     }
 
     var body: some View {
-        ZStack {
-            TabbedView(selection: $selectedTab) {
+        ZStack(alignment: .bottom) {
+            TabbedView(selection: self.$selectedTab) {
                 TasksList().tabItemLabel(VStack { Image("tab_task"); Text("Tasks") }).tag(Tab.tasks)
                 UsersList().tabItemLabel(VStack { Image("tab_user"); Text("Team") }).tag(Tab.users)
             }
             .edgesIgnoringSafeArea(.top)
 
             NotificationBadge(text: "Message goes here", color: .blue, show: $store.tasksState.hasTaskError)
-            .environmentObject(store)
-            .padding(.bottom, 10)
+                .environmentObject(store)
+                .padding(.vertical, 66)
         }
     }
 }
@@ -35,8 +35,19 @@ struct HomeView: View {
 #if DEBUG
     struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
-            HomeView().environmentObject(sampleStore)
-//            HomeView()
+            let sampleStore2 = AppState(
+                usersState: UsersState(users: testUsersModels),
+                tasksState: TasksState(tasks: testTasksModels)
+            )
+
+            sampleStore2.tasksState.hasTaskError = true
+            sampleStore2.tasksState.taskErrorMessage = "Hello Message"
+
+            return Group {
+                HomeView().environmentObject(sampleStore)
+
+                HomeView().environmentObject(sampleStore2)
+            }
         }
     }
 #endif

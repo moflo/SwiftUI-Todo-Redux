@@ -64,7 +64,7 @@ struct NotificationBadge: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 /// Calling a global `store` which should be refactored to local
                 /// using `@EnvironmentObject var store: AppState` etc.
-                store.dispatch(action: TaskActions.Notification(show: false, message: ""))
+                self.store.dispatch(action: TaskActions.Notification(show: false, message: ""))
             }
         }
 
