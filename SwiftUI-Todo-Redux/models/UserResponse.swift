@@ -10,5 +10,5 @@ import Foundation
 
 struct UserResponseJSON: Codable {
     let id: Int
-    let user: User
+    let users: [User]
 }

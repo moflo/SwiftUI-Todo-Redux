@@ -11,6 +11,11 @@ import SwiftUI
 struct UsersList: View {
     @EnvironmentObject var store: AppState
 
+    func loadPage() {
+        print("loadPage")
+        store.dispatch(action: UserActions.getUsers())
+    }
+
     var userSection: some View {
         Section {
             ForEach(store.usersState.users) { user in
@@ -21,12 +26,30 @@ struct UsersList: View {
         }
     }
 
+    var taskCreateModal: Modal {
+        return Modal(UserCreate(isEditing: $showEdit).environmentObject(store))
+    }
+
     var body: some View {
         NavigationView {
             List {
                 userSection
+
+                NavigationButton(
+                    destination: UserCreate(isEditing: $showEdit),
+                    label: { Text("Add") }
+                )
             }
-            .navigationBarTitle(Text("My Users"))
+            .navigationBarTitle(Text("My Tasks"))
+            .navigationBarItems(leading: EditButton(),
+                                trailing:
+                                HStack {
+                                    Button(action: { self.showEdit.toggle() }, label: { Text("Add") })
+            })
+            .presentation(self.showEdit ? self.taskCreateModal : nil)
+            .onAppear {
+                self.loadPage()
+            }
         }
     }
 }

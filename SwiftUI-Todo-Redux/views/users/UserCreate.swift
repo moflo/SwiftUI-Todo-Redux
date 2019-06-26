@@ -1,5 +1,5 @@
 //
-//  TaskCreate
+//  UserCreate
 //  SwiftUI-Todo-Redux
 //
 //  Created by moflo on 6/22/19.
@@ -9,16 +9,15 @@
 import Combine
 import SwiftUI
 
-// Task Creation View, presented via a call to Modal()
+// User Creation View, presented via a call to Modal()
 /// Use the `@Binding` variables to dismiss this Modal
 
-struct TaskCreate: View {
+struct UserCreate: View {
     @EnvironmentObject var store: AppState
     // @ObjectBinding private var kGuardian = KeyboardObserver(textFieldCount: 1)
 
-    /// Default task
-    @State var task: Task = Task(title: "New task", isDone: false)
-    @State var ownerName: String = ""
+    /// Default user
+    @State var user: User = User(id: 0, name: "", username: "")
 
     /// Used to dismiss Modal presentation
     @Binding var isEditing: Bool
@@ -28,26 +27,19 @@ struct TaskCreate: View {
         isEditing = false
     }
 
-    /// Dismiss Modal presentation, save updated task if valid
+    /// Dismiss Modal presentation, save updated user if valid
     func doSave() {
         isEditing = false
-        self.store.dispatch(action: TaskActions.Notification(show: true, message: "New Task Created!"))
+        self.store.dispatch(action: TaskActions.Notification(show: true, message: "New User Created!"))
     }
 
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Task Information")) {
+                Section(header: Text("User Information")) {
                     VStack(alignment: .leading) {
-                        FieldSetText(textItem: $task.title, label: "TITLE", placeHolder: "Task title")
-//                        FieldSetText(textData: .constant(""), label: "DESCRIPTION", placeHolder: "Task description")
-                    }
-                    .padding(.vertical, 20)
-                    .listRowInsets(EdgeInsets())
-                }
-                Section(header: Text("Task Owner")) {
-                    VStack(alignment: .leading) {
-                        FieldSetText(textItem: $ownerName, label: "OWNER", placeHolder: "Task owner")
+                    FieldSetText(textItem: $user.name, label: "NAME", placeHolder: "User full name")
+                    FieldSetText(textItem: $user.username, label: "USERNAME", placeHolder: "User nickname")
                     }
                     .padding(.vertical, 20)
                     .listRowInsets(EdgeInsets())
@@ -56,7 +48,7 @@ struct TaskCreate: View {
                 RoundedButton().padding(.vertical, 20)
             }
             // .offset(y: kGuardian.slide).animation(.basic(duration: 1.0))
-            .navigationBarTitle(Text("New Task"))
+            .navigationBarTitle(Text("New User"))
             .navigationBarItems(leading:
                 Button(action: doCancel, label: {
                     Text("Cancel")
@@ -69,9 +61,9 @@ struct TaskCreate: View {
 }
 
 #if DEBUG
-    struct TasksEdit_Previews: PreviewProvider {
+    struct UsersEdit_Previews: PreviewProvider {
         static var previews: some View {
-            return TaskCreate(isEditing: .constant(true))
+            return UserCreate(isEditing: .constant(true))
                 .environmentObject(sampleStore)
                 .previewLayout(.fixed(width: 375, height: 1000))
         }

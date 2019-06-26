@@ -30,7 +30,7 @@ struct DataStore {
         func path() -> String {
             switch self {
             case .users:
-                return "5d0fa0b83200001300dc6a82"
+                return "5d12c9e60e00000d07b4a098"
             case let .user(id):
                 return "5d0f9ee93200006b00dc6a71/\(id)"
             case .tasks:

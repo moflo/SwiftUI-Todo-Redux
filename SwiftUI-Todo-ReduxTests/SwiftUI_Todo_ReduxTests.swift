@@ -17,7 +17,7 @@ class SwiftUI_Todo_ReduxTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testEncoding() {
+    func testEncodingTask() {
         let json = #"""
         { "id": 1,
          "tasks":
@@ -41,6 +41,35 @@ class SwiftUI_Todo_ReduxTests: XCTestCase {
 
         } catch {
             print("JSON decoding error (GET)", TaskResponseJSON.self, error)
+
+            XCTFail()
+        }
+    }
+
+        func testEncodingUser() {
+        let json = #"""
+        { "id": 1,
+         "users":
+         [  { "id": 0,
+            "name": "user1",
+            "username": "nickname1"
+        },  {"id": 1,
+            "name": "user1",
+            "username": "nickname1"
+        }]}
+        """#
+
+        let data = json.data(using: .utf8)!
+        let decoder = JSONDecoder()
+
+        do {
+            let object = try decoder.decode(UserResponseJSON.self, from: data)
+            print(object)
+
+            XCTAssertNotNil(object)
+
+        } catch {
+            print("JSON decoding error (GET)", UserResponseJSON.self, error)
 
             XCTFail()
         }
