@@ -26,7 +26,8 @@ struct HomeView: View {
             .edgesIgnoringSafeArea(.top)
 
             NotificationBadge(text: "Message goes here", color: .blue, show: $store.tasksState.hasTaskError)
-                .padding(.bottom, 10)
+            .environmentObject(store)
+            .padding(.bottom, 10)
         }
     }
 }

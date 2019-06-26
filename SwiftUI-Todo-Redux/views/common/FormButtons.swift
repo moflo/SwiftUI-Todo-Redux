@@ -46,6 +46,8 @@ struct RoundedButton: View {
 }
 
 struct NotificationBadge: View {
+    @EnvironmentObject var store: AppState
+
     let text: String
     let color: Color
     @Binding var show: Bool
