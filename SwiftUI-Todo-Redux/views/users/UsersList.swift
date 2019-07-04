@@ -20,7 +20,7 @@ struct UsersList: View {
     var userSection: some View {
         Section {
             ForEach(store.usersState.users) { user in
-                NavigationButton(destination: UserDetail(user: user)) {
+                NavigationLink(destination: UserDetail(user: user)) {
                     UsersRow(user: user)
                 }
             }
@@ -36,7 +36,7 @@ struct UsersList: View {
             List {
                 userSection
 
-                NavigationButton(
+                NavigationLink(
                     destination: UserCreate(isEditing: $showEdit),
                     label: { Text("Add") }
                 )

@@ -20,8 +20,8 @@ struct HomeView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TabbedView(selection: self.$selectedTab) {
-                TasksList().tabItemLabel(VStack { Image("tab_task"); Text("Tasks") }).tag(Tab.tasks)
-                UsersList().tabItemLabel(VStack { Image("tab_user"); Text("Team") }).tag(Tab.users)
+                TasksList().tabItem(VStack { Image("tab_task"); Text("Tasks") }).tag(Tab.tasks)
+                UsersList().tabItem(VStack { Image("tab_user"); Text("Team") }).tag(Tab.users)
             }
             .edgesIgnoringSafeArea(.top)
 

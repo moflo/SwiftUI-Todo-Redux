@@ -20,7 +20,7 @@ struct TasksList: View {
     var taskSection: some View {
         Section {
             ForEach(store.tasksState.tasks) { task in
-                NavigationButton(destination: TaskDetail(task: task)) {
+                NavigationLink(destination: TaskDetail(task: task)) {
                     TasksRow(task: task)
                 }
             }
@@ -36,7 +36,7 @@ struct TasksList: View {
             List {
                 taskSection
 
-                NavigationButton(
+                NavigationLink(
                     destination: TaskCreate(isEditing: $showEdit),
                     label: { Text("Add") }
                 )
@@ -46,7 +46,7 @@ struct TasksList: View {
                                 trailing:
                                 HStack {
                                     Button(action: { self.showEdit.toggle() }, label: { Text("Add1") })
-                                    NavigationButton(
+                                    NavigationLink(
                                         destination: TaskCreate(isEditing: $showEdit),
                                         label: { Text("Add2") }
                                     )
