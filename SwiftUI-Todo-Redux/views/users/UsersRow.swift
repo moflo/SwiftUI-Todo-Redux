@@ -14,10 +14,10 @@ struct UsersRow: View {
 
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: CGFloat(8.0)) {
                 Text(user.name).font(.title)
                 Text(user.username)
-                    .color(.secondary)
+                    .foregroundColor(.secondary)
             }.padding(.leading, 8)
         }.padding(8)
     }

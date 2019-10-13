@@ -61,9 +61,9 @@ struct TaskDetail: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
-                if self.mode?.value == .active {
+                if self.mode?.wrappedValue == .active {
                     Button(action: {
-                        self.mode?.animation().value = .inactive
+                        self.mode?.animation().wrappedValue = .inactive
                         // Update current taskID
                         self.task = self.draftTask
                         // store.dispatch(aciton: TaskActions.updateTask(id: task.id, task: draftTask))
@@ -78,7 +78,7 @@ struct TaskDetail: View {
 
                 EditButton()
             }
-            if self.mode?.value == .inactive {
+            if self.mode?.wrappedValue == .inactive {
                 TaskSummary
             } else {
                 TaskEdit

@@ -27,9 +27,9 @@ struct UsersList: View {
         }
     }
 
-    var taskCreateModal: Modal {
-        return Modal(UserCreate(isEditing: $showEdit).environmentObject(store))
-    }
+//    var taskCreateModal: Modal {
+//        return Modal(UserCreate(isEditing: $showEdit).environmentObject(store))
+//    }
 
     var body: some View {
         NavigationView {
@@ -47,7 +47,9 @@ struct UsersList: View {
                                 HStack {
                                     Button(action: { self.showEdit.toggle() }, label: { Text("Add") })
             })
-            .presentation(self.showEdit ? self.taskCreateModal : nil)
+            .sheet(isPresented: $showEdit) {
+                UserCreate(isEditing: self.$showEdit).environmentObject(self.store)
+            }
             .onAppear {
                 self.loadPage()
             }

@@ -11,7 +11,7 @@ import SwiftUI
 
 // Class to respond to keyboard events
 
-final class KeyboardObserver: BindableObject {
+final class KeyboardObserver: ObservableObject {
     let didChange = PassthroughSubject<Void, Never>()
 
     public var rects: [CGRect]
@@ -21,7 +21,7 @@ final class KeyboardObserver: BindableObject {
     // this flag makes sure we only act once per keyboard appearance
     public var keyboardIsHidden = true
 
-    public var slide: Length = 0 {
+    public var slide: CGFloat = 0.0 {
         didSet {
             didChange.send()
         }

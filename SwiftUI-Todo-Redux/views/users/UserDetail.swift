@@ -49,9 +49,9 @@ struct UserDetail: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                if self.mode?.value == .active {
+                if self.mode?.wrappedValue == .active {
                     Button(action: {
-                        self.mode?.animation().value = .inactive
+                        self.mode?.animation().wrappedValue = .inactive
                         // Update current userID
                         self.user = self.draftUser
                         // store.dispatch(aciton: UserActions.updateUser(id: user.id, user: draftUser))
@@ -66,7 +66,7 @@ struct UserDetail: View {
 
                 EditButton()
             }
-            if self.mode?.value == .inactive {
+            if self.mode?.wrappedValue == .inactive {
                 UserSummary
             } else {
                 UserEdit

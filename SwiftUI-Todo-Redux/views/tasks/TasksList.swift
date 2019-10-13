@@ -27,9 +27,9 @@ struct TasksList: View {
         }
     }
 
-    var taskCreateModal: Modal {
-        return Modal(TaskCreate(isEditing: $showEdit).environmentObject(store))
-    }
+//    var taskCreateModal: Modal {
+//        return Modal(TaskCreate(isEditing: $showEdit).environmentObject(store))
+//    }
 
     var body: some View {
         NavigationView {
@@ -51,7 +51,9 @@ struct TasksList: View {
                                         label: { Text("Add2") }
                                     )
             })
-            .presentation(self.showEdit ? self.taskCreateModal : nil)
+            .sheet(isPresented: $showEdit) {
+                TaskCreate(isEditing: self.$showEdit).environmentObject(self.store)
+            }
             .onAppear {
                 self.loadPage()
             }

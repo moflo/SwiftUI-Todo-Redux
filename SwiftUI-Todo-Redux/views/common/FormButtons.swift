@@ -20,9 +20,9 @@ struct FieldSetText: View {
         VStack(alignment: .leading) {
             Text(label)
                 .font(.headline)
-            TextField($textItem, placeholder: Text(placeHolder))
+            TextField(placeHolder, text: $textItem)
                 .padding(.all)
-                .background(Color("form-field-background"), cornerRadius: 5.0)
+                .background(Color("form-field-background")) //, cornerRadius: 5.0)
         }
         .padding(.horizontal, 15)
     }
@@ -35,12 +35,13 @@ struct RoundedButton: View {
                 Spacer()
                 Text("Save")
                     .font(.headline)
-                    .color(Color.white)
+                    .foregroundColor(Color.white)
                 Spacer()
             }
         }
         .padding(.vertical, 10.0)
-        .background(Color.green, cornerRadius: 8.0)
+        .background(Color.green)
+        //, cornerRadius: 8.0)
         .padding(.horizontal, 40)
     }
 }
@@ -54,7 +55,7 @@ struct NotificationBadge: View {
 
     var animation: Animation {
         Animation
-            .spring(initialVelocity: 5)
+            .spring(dampingFraction: 0.5)
             .speed(2)
             .delay(0.3)
     }
@@ -69,7 +70,7 @@ struct NotificationBadge: View {
         }
 
         return Text(text)
-            .color(.white)
+            .foregroundColor(.white)
             .padding()
             .background(color)
             .cornerRadius(8)

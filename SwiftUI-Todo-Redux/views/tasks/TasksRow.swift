@@ -16,18 +16,20 @@ struct TasksRow: View {
         HStack {
             if task.isDone {
                 Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 60))
+//                    .font(.largeTitle)
+                    .imageScale(.large)
                     .foregroundColor(.green)
             } else {
                 Image(systemName: "checkmark.circle")
-                    .font(.system(size: 60))
+//                    .font(.largeTitle)
+                    .imageScale(.large)
                     .foregroundColor(.gray)
             }
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: CGFloat(8.0)) {
                 Text(task.title).font(.title)
                 Text(task.id)
-                    .color(.secondary)
-            }.padding(.leading, 8)
+                    .foregroundColor(.secondary)
+            }.padding(.leading, CGFloat(8.0))
         }.padding(8)
     }
 }

@@ -10,7 +10,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-final class AppState: BindableObject {
+final class AppState: ObservableObject {
     var didChange = PassthroughSubject<AppState, Never>()
 
     var usersState: UsersState
